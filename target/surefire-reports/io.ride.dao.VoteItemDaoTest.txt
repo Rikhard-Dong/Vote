@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: io.ride.dao.VoteItemDaoTest
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 0.011 sec <<< FAILURE! - in io.ride.dao.VoteItemDaoTest
+queryByThemeId(io.ride.dao.VoteItemDaoTest)  Time elapsed: 0.01 sec  <<< ERROR!
+java.lang.NullPointerException: null
+	at io.ride.dao.VoteItemDaoTest.queryByThemeId(VoteItemDaoTest.java:15)
+
