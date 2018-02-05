@@ -81,7 +81,7 @@ public class VoteItemServiceImpl implements VoteItemService {
         long sum = 0;
         if (status == 2 || status == 3) {
             for (VoteItem item : items) {
-                Long itemSum = detailDao.count(item.getId());
+                Long itemSum = detailDao.countByItemId(item.getId());
                 item.setSum(itemSum);
                 sum += itemSum;
             }

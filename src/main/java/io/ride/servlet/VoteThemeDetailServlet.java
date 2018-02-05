@@ -55,8 +55,10 @@ public class VoteThemeDetailServlet extends HttpServlet {
             } else if (StringUtils.equals(op, "items")) {
                 System.out.println("doGet() items in .....");
                 listItems(request);
+            } else if (StringUtils.equals(op, "pie")) {
+                // 以饼图的形式查看当前数据
+                getPie(request);
             }
-
 //            for (Cookie cookie1 : request.getCookies()) {
 //                System.out.println(cookie1.getName() + " ====> " + cookie1.getValue() + "  过期时间:" + cookie1.getMaxAge());
 //            }
@@ -65,6 +67,14 @@ public class VoteThemeDetailServlet extends HttpServlet {
             out.flush();
             e.printStackTrace();
         }
+    }
+
+
+    private void getPie(HttpServletRequest request) throws SQLException {
+        int themeId = Integer.parseInt(request.getParameter("themeId"));
+        ResultDTO result = themeService.getPieData(themeId);
+        out.print(JacksonUtil.toJSon(result));
+        out.flush();
     }
 
     @Override

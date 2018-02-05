@@ -23,6 +23,7 @@
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/template-web.js"></script>
     <script src="${pageContext.request.contextPath}/js/commons.js"></script>
+    <script src="${pageContext.request.contextPath}/js/highcharts.js"></script>
 </head>
 <body>
 <%@include file="../nav.jsp" %>
@@ -46,6 +47,33 @@
 </div>
 
 <%@include file="../messageModal.jsp" %>
+
+<!-- 详情modal Modal -->
+<div class="modal fade" id="theme-detail-modal" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel">
+    <div class="modal-dialog  modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">查看投票数据</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div id="pie-inner">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-primary" id="go-theme-detail-btn">前往投票页查看</button>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 <script type="text/html" id="vote-themes-temp">
@@ -105,6 +133,8 @@
 
 <script>
     var cur;
+    var themeId;
+
 
     $(function () {
         toPage(1);
@@ -151,10 +181,69 @@
      * 详情按钮
      */
     $(document).on('click', '.theme-detail', function () {
-        var themeId = $(this).attr("data-theme-id");
-        window.location.href = '${pageContext.request.contextPath}/vote/detail?op=detail&themeId=' + themeId;
+        themeId = $(this).attr("data-theme-id");
+
+        $.ajax({
+            url: '${pageContext.request.contextPath}/vote/detail',
+            method: 'GET',
+            data: {
+                'op': 'pie',
+                'themeId': themeId
+            },
+            success: function (result) {
+                result = eval("(" + result + ")");
+                console.log(result);
+                if (result.code === 0) {
+                    var inner = $("<h2></h2>").append(result.msg);
+                    $('#pie-inner').css('min-width', '');
+                    $('#pie-inner').css('min-height', '');
+                    $('#pie-inner').empty().append(inner);
+                } else if (result.code === 1) {
+                    $('#pie-inner').empty();
+                    $('#pie-inner').css('min-width', '768px');
+                    $('#pie-inner').css('min-height', '768px');
+
+                    $('#pie-inner').highcharts({
+                        chart: {
+                            plotBackgroundColor: null,
+                            plotBorderWidth: null,
+                            plotShadow: false
+                        },
+                        title: {
+                            text: result.data.name
+                        },
+                        tooltip: {
+                            headerFormat: '{series.name}<br>',
+                            pointFormat: '{point.name}: <b>{point.percentage:.1f}%</b>'
+                        },
+                        plotOptions: {
+                            pie: {
+                                allowPointSelect: true,
+                                cursor: 'pointer',
+                                dataLabels: {
+                                    enabled: false
+                                },
+                                showInLegend: true
+                            }
+                        },
+                        series: [{
+                            type: 'pie',
+                            name: '各投票占比',
+                            data: result.data.data
+                        }]
+                    });
+                }
+
+                $('#theme-detail-modal').modal('show');
+
+            }
+        })
     });
 
+
+    $('#go-theme-detail-btn').click(function () {
+        window.location.href = '${pageContext.request.contextPath}/vote/detail?op=detail&themeId=' + themeId;
+    });
 
     /**
      * 删除按钮

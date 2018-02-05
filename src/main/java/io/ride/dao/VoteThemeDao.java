@@ -22,12 +22,12 @@ public class VoteThemeDao extends BaseDao {
     }
 
     public int insertOne(VoteTheme theme) throws SQLException {
-        String sql = "insert into t_vote_theme(userId, theme, `desc`, startTime, endTime, isSingle, maxSelect, isAnonymous, timeDiff) " +
-                "values (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "insert into t_vote_theme(userId, theme, `desc`, startTime, endTime, isSingle, maxSelect, isAnonymous, timeDiff, ipMax) " +
+                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         Object[] params = {theme.getUserId(), theme.getTheme(), theme.getDesc(), DateUtil.date2Str(theme.getStartTime()),
                 DateUtil.date2Str(theme.getEndTime()), theme.getIsSingle(), theme.getMaxSelect(),
-                theme.getIsAnonymous(), theme.getTimeDiff(),};
+                theme.getIsAnonymous(), theme.getTimeDiff(), theme.getIpMax()};
 
         return runner.update(sql, params);
     }

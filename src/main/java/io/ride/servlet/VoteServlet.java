@@ -5,6 +5,7 @@ import io.ride.DTO.SimpleVoteThemeDto;
 import io.ride.PO.User;
 import io.ride.PO.VoteDetail;
 import io.ride.PO.VoteTheme;
+import io.ride.dao.VoteDetailDao;
 import io.ride.dao.VoteThemeDao;
 import io.ride.service.VoteDetailService;
 import io.ride.service.VoteThemeService;
@@ -29,6 +30,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @WebServlet("/vote")
@@ -39,6 +41,7 @@ public class VoteServlet extends HttpServlet {
     private VoteDetailService detailService = new VoteDetailServiceImpl();
     private FollowService followService = new FollowServiceImpl();
     private VoteThemeDao themeDao = new VoteThemeDao();
+    private VoteDetailDao detailDao = new VoteDetailDao();
 
     @Override
     public void init() throws ServletException {
@@ -103,18 +106,31 @@ public class VoteServlet extends HttpServlet {
         String itemIdStr = request.getParameter("itemIds");
         User user = (User) request.getSession().getAttribute("user");
         String ipAddress = CusAccessObjectUtil.getIpAddress(request);
-        String openId = request.getParameter("openId");
+        String openId = (String) request.getSession().getAttribute("openId");
+
+        System.out.println("vote servlet voted function openId ====> " + openId);
+
 
         if (theme.getIsAnonymous() == 2 && StringUtils.isEmpty(openId)) {
-            out.print(JacksonUtil.toJSon(ResultDTO.FAIL("本投票需要关注微信公众号")));
+            out.print(JacksonUtil.toJSon(ResultDTO.FAIL("本投票为微信投票m(｡≧ｴ≦｡)m")));
             out.flush();
             return;
         } else if (theme.getIsAnonymous() == 2) {
             Follow follow = followService.getFollow(openId);
             if (follow == null) {
-                out.print(JacksonUtil.toJSon(ResultDTO.FAIL("本投票需要关注微信公众号")));
+                out.print(JacksonUtil.toJSon(ResultDTO.FAIL("本投票需要关注微信公众号m(｡≧ｴ≦｡)m")));
                 out.flush();
                 return;
+            }
+
+            // 判断就该微信用户最近一次投票
+            VoteDetail leastDetail = detailDao.getLeastDetailForOpenId(theme.getId(), openId);
+            if (leastDetail != null) {
+                if (!DateUtil.expire(leastDetail.getVoteTime(), theme.getTimeDiff() * 60 * 1000)) {
+                    out.print(JacksonUtil.toJSon(ResultDTO.FAIL("投票冷却中, 当前不能投票哦m(｡≧ｴ≦｡)m")));
+                    out.flush();
+                    return;
+                }
             }
         }
 

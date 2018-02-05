@@ -19,4 +19,13 @@ public interface VoteThemeService {
     ResultDTO deleteTheme(int themeId) throws SQLException;
 
     ResultDTO updateDesc(int themeId, int userId, String desc) throws SQLException;
+
+    /**
+     * 提供数据提供给前端highcharts使用
+     *
+     * @param themeId
+     * @return
+     * @throws SQLException
+     */
+    ResultDTO getPieData(int themeId) throws SQLException;
 }

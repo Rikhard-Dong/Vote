@@ -96,10 +96,17 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="timeDiff" class="col-sm-2 control-label">两次投票时间差</label>
+                    <label for="timeDiff" class="col-sm-2 control-label">两次投票时间差(小时)</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" name="timeDiff" id="timeDiff" placeholder="多久之后能再次投票"
                                value="24">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="timeDiff" class="col-sm-2 control-label">IP限制</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" name="ipMax" id="ipMax"
+                               placeholder="每个IP的投票数量限制,默认为-1不限制,如果为多选应乘选择的数量,建议设为预期值的两倍">
                     </div>
                 </div>
                 <%--<div class="form-group">--%>
@@ -120,8 +127,8 @@
                         <input type="text" class="form-control" name="endTime" id="endTime"
                                placeholder="yyyy-mm-dd hh:MM:ss">
                     </div>
-                    <div class="col-sm-2">
-                        <small>留出时间添加选项</small>
+                    <div class="col0xs-12">
+                        <small>请留出足够的时间添加选项</small>
                     </div>
                 </div>
                 <div class="col-sm-offset-2 col-sm-10">

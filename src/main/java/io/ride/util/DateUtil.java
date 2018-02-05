@@ -33,6 +33,7 @@ public class DateUtil {
 
     /**
      * 判断是否超出时间
+     * 判断data加上ms微妙后是否超过当前时间, true表示能够投票, false表示不能够投票
      *
      * @param data
      * @param ms

@@ -8,6 +8,7 @@ import io.ride.dao.VoteDetailDao;
 import io.ride.dao.VoteItemDao;
 import io.ride.dao.VoteThemeDao;
 import io.ride.service.VoteDetailService;
+import io.ride.util.DateUtil;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -37,7 +38,12 @@ public class VoteDetailServiceImpl implements VoteDetailService {
             }
         }
 
-
+        VoteDetail leastDetail = detailDao.getLeastDetailForIpAddress(theme.getId(), details.get(0).getIpAddress());
+        if (leastDetail != null) {
+            if (!DateUtil.expire(leastDetail.getVoteTime(), theme.getTimeDiff() * 60 * 1000)) {
+                return ResultDTO.FAIL("投票冷却中(；´ﾟωﾟ｀人)");
+            }
+        }
 
         int result = 1;
         for (VoteDetail detail : details) {

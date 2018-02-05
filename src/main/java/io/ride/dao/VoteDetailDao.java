@@ -9,9 +9,30 @@ import java.sql.SQLException;
 
 public class VoteDetailDao extends BaseDao {
 
-    public Long count(int itemId) throws SQLException {
+    /**
+     * 根据itemId统计该选项下的投票数
+     *
+     * @param itemId
+     * @return
+     * @throws SQLException
+     */
+    public Long countByItemId(int itemId) throws SQLException {
         String sql = "select count(*) from t_vote_detail where itemId = ?";
         return runner.query(sql, new ScalarHandler<Long>(), itemId);
+    }
+
+    /**
+     * 统计该投票主题下所有的投票数目
+     *
+     * @param themeId
+     * @return
+     * @throws SQLException
+     */
+    public Long countByThemeId(int themeId) throws SQLException {
+        String sql = "select count(*) from t_vote_theme theme, t_vote_item item, t_vote_detail detail " +
+                "where theme.id = item.themeId and item.id = detail.itemId " +
+                "and theme.id = ?";
+        return runner.query(sql, new ScalarHandler<Long>(), themeId);
     }
 
     /**
@@ -25,7 +46,7 @@ public class VoteDetailDao extends BaseDao {
     public Long countIpAddressItems(int themeId, String ipAddress) throws SQLException {
         String sql = "select count(*) from t_vote_theme t, t_vote_item i, t_vote_detail d " +
                 "where t.id = i.themeId and i.id = d.itemId " +
-                "adn t.id = ? and d.ipAddress = ?";
+                "and t.id = ? and d.ipAddress = ?";
 
         return runner.query(sql, new ScalarHandler<Long>(), themeId, ipAddress);
     }
@@ -58,11 +79,29 @@ public class VoteDetailDao extends BaseDao {
      * @return
      * @throws SQLException
      */
-    public VoteDetail getLeastDetail(int themeId, String ipAddress) throws SQLException {
+    public VoteDetail getLeastDetailForIpAddress(int themeId, String ipAddress) throws SQLException {
         String sql = "select d.* from t_vote_theme t, t_vote_item i, t_vote_detail d " +
                 "where t.id = i.themeId and i.id = d.itemId and t.id = ? and d.ipAddress = ? " +
                 "order by d.voteTime desc " +
                 "limit 1";
         return runner.query(sql, new BeanHandler<>(VoteDetail.class), themeId, ipAddress);
+    }
+
+
+    /**
+     * 查询该主题下该微信号最近的一次投票
+     *
+     * @param themeId
+     * @param openId
+     * @return
+     * @throws SQLException
+     */
+    public VoteDetail getLeastDetailForOpenId(int themeId, String openId) throws SQLException {
+        String sql = "select d.* from t_vote_theme t, t_vote_item i, t_vote_detail d " +
+                "where t.id = i.themeId and i.id = d.itemId and t.id = ? and d.openId = ? " +
+                "order by d.voteTime desc " +
+                "limit 1";
+        return runner.query(sql, new BeanHandler<>(VoteDetail.class), themeId, openId);
+
     }
 }

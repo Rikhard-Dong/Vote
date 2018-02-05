@@ -62,7 +62,7 @@ public class WechatServlet extends HttpServlet {
 
         try {
             String respXml = coreService.processRequest(request);
-            System.out.println(respXml);
+//            System.out.println(respXml);
             out.print(respXml);
             out.flush();
         } catch (Exception e) {

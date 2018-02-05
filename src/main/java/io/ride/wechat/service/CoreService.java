@@ -66,7 +66,7 @@ public class CoreService {
             if (StringUtils.equals(event, MessageUtil.EVENT_TYPE_SUBSCRIBE)) {
                 // 关注事件
                 followService.subscribe(openId);
-                msg = "感谢您的关注!";
+                msg = "感谢您的关注!m(｡≧ｴ≦｡)m\n回复投票主题ID可以参与投票!";
             } else if (StringUtils.equals(event, MessageUtil.EVENT_TYPE_UNSUBSCRIBE)) {
                 // 取消关注事件
                 followService.unsubscribe(openId);

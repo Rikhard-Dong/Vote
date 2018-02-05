@@ -30,6 +30,7 @@ public class ThemeServiceImpl implements ThemeService {
         String description = theme.getDesc();
         String picUrl = DOMAIN + user.getHeadImage();
         String url = DOMAIN + "/vote/detail?op=detail&themeId=" + themeId + "&openId=" + openId;
+        System.out.println("wechat news url is =====> " + url);
 
         Article article = new Article(title, description, picUrl, url);
 
