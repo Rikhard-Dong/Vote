@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.ride.wechat.PO.wechat.menu.Button;
 import io.ride.wechat.PO.wechat.menu.CommonButton;
 import io.ride.wechat.PO.wechat.menu.Menu;
+import io.ride.wechat.service.TokenService;
 import org.apache.commons.lang3.StringUtils;
 
 public class MenuUtil {
@@ -34,7 +35,13 @@ public class MenuUtil {
         btn1.setName("参与投票");
         btn1.setType("view");
         // TODO 如果需要修改url这里
-        btn1.setUrl("http://ridddddde.free.ngrok.cc/");
+
+        String myUrl = "http://ridddddde.free.ngrok.cc/redirect_index";
+        String url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + CommonUtil.getAPPID()
+                + "&redirect_uri=" + myUrl
+                + "&response_type=code&scope=snsapi_base&state=STATE#wechat_redirec";
+
+        btn1.setUrl(url);
 
         Menu menu = new Menu();
         menu.setButton(new Button[]{btn1});

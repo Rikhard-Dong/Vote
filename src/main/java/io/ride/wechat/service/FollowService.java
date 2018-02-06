@@ -9,8 +9,8 @@ public interface FollowService {
 
     Follow getFollow(String openId) throws SQLException;
 
-    public void subscribe(String openId) throws SQLException;
+    void subscribe(String openId) throws SQLException;
 
-    public void unsubscribe(String openId) throws SQLException;
+    void unsubscribe(String openId) throws SQLException;
 
 }

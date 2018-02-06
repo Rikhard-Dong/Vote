@@ -30,14 +30,14 @@ public class VoteThemeDetailServlet extends HttpServlet {
     private int themeId;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         String basePath = getServletContext().getRealPath("/");
         themeService = new VoteThemeServiceImpl(basePath);
         itemService = new VoteItemServiceImpl();
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         out = response.getWriter();
         String op = request.getParameter("op");
         System.out.println("vote theme detail servlet doGet() in .....");
@@ -78,7 +78,7 @@ public class VoteThemeDetailServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         out = response.getWriter();
 
         String op = request.getParameter("op");

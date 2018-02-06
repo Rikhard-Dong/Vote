@@ -34,7 +34,7 @@ public class VoteThemeDaoTest {
     }
 
     @Test
-    public void count1() throws SQLException {
+    public void count1() {
     }
 
     @Test

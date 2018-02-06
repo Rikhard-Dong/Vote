@@ -42,19 +42,19 @@ public class VoteItemServlet extends HttpServlet {
     private static final int MAX_REQUEST_SIZE = 1024 * 1024 * 50; // 50MB
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         photoPath = File.separator + "upload" + File.separator + "photo";
         basePath = getServletContext().getRealPath("/");
         itemService = new VoteItemServiceImpl();
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         out = response.getWriter();
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         out = response.getWriter();
         String op = request.getParameter("op");
         if (StringUtils.equals(op, "addItem")) {

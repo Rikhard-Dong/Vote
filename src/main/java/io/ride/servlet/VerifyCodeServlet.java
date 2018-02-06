@@ -20,7 +20,7 @@ public class VerifyCodeServlet extends HttpServlet {
     private VerifyCodeUtil verifyCodeUtil = new VerifyCodeUtil(new VerifyCodeUtil.VerifyCodeStyle());
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) {
         BufferedImage vcImg = verifyCodeUtil.getVCImg();
         String code = verifyCodeUtil.getCodeValue().toString();
         request.getSession().setAttribute("code", code);
@@ -29,7 +29,7 @@ public class VerifyCodeServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         PrintWriter out = response.getWriter();
 
         String code = request.getParameter("code");

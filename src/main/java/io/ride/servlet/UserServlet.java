@@ -27,13 +27,13 @@ public class UserServlet extends HttpServlet {
     private String basePath;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         headPath = File.separator + "upload" + File.separator + "head";
         basePath = getServletContext().getRealPath("/");
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         out = response.getWriter();
         String op = request.getParameter("op");
         try {
@@ -51,7 +51,7 @@ public class UserServlet extends HttpServlet {
                 getHead(request);
             }
         } catch (SQLException e) {
-            System.out.println("=========>    UserServlet doPost Exception.......");
+//            System.out.println("=========>    UserServlet doPost Exception.......");
             out.print(ResultDTO.FAIL("未知异常"));
             out.flush();
             e.printStackTrace();
@@ -60,7 +60,7 @@ public class UserServlet extends HttpServlet {
 
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         out = response.getWriter();
         String op = request.getParameter("op");
         try {
@@ -80,7 +80,7 @@ public class UserServlet extends HttpServlet {
 
     }
 
-    private void getHead(HttpServletRequest request) throws IOException {
+    private void getHead(HttpServletRequest request) {
         User user = (User) request.getSession().getAttribute("user");
         String headPath;
         if (user == null) {

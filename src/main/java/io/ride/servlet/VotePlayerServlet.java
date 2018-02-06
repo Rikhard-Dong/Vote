@@ -25,13 +25,13 @@ public class VotePlayerServlet extends HttpServlet {
     private VotePlayerService playerService;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         String basePath = getServletContext().getRealPath("/");
         playerService = new VotePlayerServiceImpl(basePath);
     }
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         out = response.getWriter();
         String op = request.getParameter("op");
         try {
@@ -48,7 +48,7 @@ public class VotePlayerServlet extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         out = response.getWriter();
         String op = request.getParameter("op");
         try {

@@ -61,6 +61,7 @@
     </div>
 </div>
 
+<script src="${pageContext.request.contextPath}/js/commons.js"></script>
 
 <script>
     $.ajax({

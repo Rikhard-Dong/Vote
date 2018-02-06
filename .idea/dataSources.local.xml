@@ -27,5 +27,15 @@
       <user-name>root</user-name>
       <introspection-schemas>*:db_vote</introspection-schemas>
     </data-source>
+    <data-source name="db_vote@localhost [2]" uuid="0fa67d40-b3bb-4ba0-b1be-a42aa3abeb94">
+      <database-info product="MySQL" version="5.7.21-0ubuntu0.16.04.1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*:db_vote</introspection-schemas>
+    </data-source>
   </component>
 </project>

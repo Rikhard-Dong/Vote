@@ -113,4 +113,19 @@ public class CommonUtil {
         return tree.get("ticket").toString().replaceAll("\"", "");
     }
 
+    public static String getAPPID() {
+        return APPID;
+    }
+
+    public static void setAPPID(String APPID) {
+        CommonUtil.APPID = APPID;
+    }
+
+    public static String getSECRET() {
+        return SECRET;
+    }
+
+    public static void setSECRET(String SECRET) {
+        CommonUtil.SECRET = SECRET;
+    }
 }

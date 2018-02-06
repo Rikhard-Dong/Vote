@@ -485,7 +485,7 @@
     var num;       // 可以选择的数量
     var sum;       // 总票数
     var timeDiff;   // 时间差
-    var itemIdArray = new Array();
+    var itemIdArray = [];
 
     $(function () {
         /* 禁止点击空白处和esc关闭模态框 */

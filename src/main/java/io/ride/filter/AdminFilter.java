@@ -12,7 +12,7 @@ import java.io.PrintWriter;
 
 @WebFilter(filterName = "adminFilter", urlPatterns = {"/admin/*"})
 public class AdminFilter implements Filter {
-    public void init(FilterConfig filterConfig) throws ServletException {
+    public void init(FilterConfig filterConfig) {
 
     }
 

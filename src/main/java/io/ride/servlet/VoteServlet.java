@@ -44,14 +44,14 @@ public class VoteServlet extends HttpServlet {
     private VoteDetailDao detailDao = new VoteDetailDao();
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         String basePath = getServletContext().getRealPath("/");
         themeService = new VoteThemeServiceImpl(basePath);
     }
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         out = response.getWriter();
 
         String op = request.getParameter("op");
@@ -72,7 +72,7 @@ public class VoteServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         out = response.getWriter();
 
         String op = request.getParameter("op");
@@ -116,7 +116,10 @@ public class VoteServlet extends HttpServlet {
             out.flush();
             return;
         } else if (theme.getIsAnonymous() == 2) {
+            System.out.println("vote servlet voted function openId ====> " + openId);
             Follow follow = followService.getFollow(openId);
+            System.out.println("voted function follow getFollow() ====> " + follow);
+
             if (follow == null) {
                 out.print(JacksonUtil.toJSon(ResultDTO.FAIL("本投票需要关注微信公众号m(｡≧ｴ≦｡)m")));
                 out.flush();
