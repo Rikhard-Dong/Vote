@@ -29,6 +29,17 @@
     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
+
+        a {
+            text-decoration: none;
+            color: #000;
+        }
+
+        a:hover {
+            text-decoration: none;
+            color: #000;
+        }
+
         .card {
             border: 1px solid #5e5e5e;
             border-radius: 7px;
@@ -103,7 +114,9 @@
                         <div class="col-xs-4 card-author">
                             <p>
                                 <span class="glyphicon glyphicon-user"></span>
-                                <span id="card-author">{{value.username}}</span></p>
+                                <span id="card-author">
+                                    <a href="${pageContext.request.contextPath}/user/detail?op=profile&userId={{value.userId}}">{{value.nickname}}</a>
+                                </span></p>
                         </div>
                         <hr width="80%">
                     </div>
@@ -138,16 +151,19 @@
             <nav aria-label="Page navigation">
                 <ul class="pagination pagination-lg">
                     <li>
-                        <a href="javascript:void(0)" aria-label="Previous" class="to-page-link" data-page="{{helper.pre}}">
+                        <a href="javascript:void(0)" aria-label="Previous" class="to-page-link"
+                           data-page="{{helper.pre}}">
                             <span aria-hidden="true">&laquo;</span>
                         </a>
                     </li>
                     {{each helper.pageList value i}}
                     {{if value == helper.curr}}
-                    <li class="active"><a href="javascript:void(0)" class="to-page-link" data-page="{{value}}">{{value}}</a>
+                    <li class="active"><a href="javascript:void(0)" class="to-page-link"
+                                          data-page="{{value}}">{{value}}</a>
                     </li>
                     {{else}}
-                    <li><a href="javascript:void(0)" class="to-page-link" data-page="{{value}}">{{value}}</a></li>
+                    <li><a href="javascript:void(0)" class="to-page-link" data-page="{{value}}">{{value}}</a>
+                    </li>
                     {{/if}}
                     {{/each}}
                     <li>

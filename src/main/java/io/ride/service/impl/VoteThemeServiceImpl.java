@@ -26,6 +26,10 @@ public class VoteThemeServiceImpl implements VoteThemeService {
 
     private String basePath;
 
+    public VoteThemeServiceImpl() {
+        this.basePath = null;
+    }
+
     public VoteThemeServiceImpl(String basePath) {
         this.basePath = basePath;
     }
@@ -159,6 +163,51 @@ public class VoteThemeServiceImpl implements VoteThemeService {
         return result;
     }
 
+    @Override
+    public ResultDTO getVoteByUserId(int userId) throws SQLException {
+        User user = userDao.queryById(userId);
+        if (user == null) {
+            return ResultDTO.FAIL("当前用户不存在w(°ｏ°)w");
+        }
+        List<VoteTheme> themes = themeDao.queryByUserId(userId);
+        if (themes == null || themes.size() == 0) {
+            return ResultDTO.FAIL("该用户没有发起过投票w(°ｏ°)w");
+        }
+        List<SimpleVoteThemeDto> simpleThemes = new ArrayList<>();
+        for (VoteTheme theme : themes) {
+            SimpleVoteThemeDto simpleVoteTheme = new SimpleVoteThemeDto(theme, user);
+            simpleThemes.add(simpleVoteTheme);
+        }
+
+        return ResultDTO.SUCCESS("查询成功!").addData("votes", simpleThemes);
+    }
+
+    @Override
+    public ResultDTO getUserVotedTheme(int userId) throws SQLException {
+        User user = userDao.queryById(userId);
+        if (user == null) {
+            return ResultDTO.FAIL("该用户不存在w(°ｏ°)w");
+        }
+        List<VoteTheme> themes = themeDao.queryByUserVotedTheme(userId);
+        if (themes == null || themes.size() == 0) {
+            return ResultDTO.FAIL("该用户没有参与过投票w(°ｏ°)w");
+        }
+        List<SimpleVoteThemeDto> simpleThemes = new ArrayList<>();
+        for (VoteTheme theme : themes) {
+            User var1 = userDao.queryById(theme.getUserId());
+            SimpleVoteThemeDto simpleVoteTheme = new SimpleVoteThemeDto(theme, var1);
+            simpleThemes.add(simpleVoteTheme);
+        }
+
+        return ResultDTO.SUCCESS("查询成功!").addData("votes", simpleThemes);
+    }
+
+    /**
+     * 删除主题前删除该主题相关内容
+     *
+     * @param themeId 主题Id
+     * @throws SQLException 数据库操作异常
+     */
     private void deleteThemAbout(int themeId) throws SQLException {
         List<VotePlayer> players = playerDao.queryByThemeId(themeId);
         List<VoteItem> items = itemDao.queryByThemeId(themeId);
@@ -184,6 +233,11 @@ public class VoteThemeServiceImpl implements VoteThemeService {
         }
     }
 
+    /**
+     * 删除相关文件
+     *
+     * @param filename 文件路径
+     */
     private void deleteFile(String filename) {
         System.out.println("filename ======> " + filename);
         File file = new File(filename);

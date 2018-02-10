@@ -29,4 +29,11 @@ public class UserDaoTest {
     public void queryLimit() throws SQLException {
         System.out.println(userDao.queryLimit(3, 0));
     }
+
+    @Test
+    public void searchUser() throws SQLException {
+        String regex = "ride";
+        regex = "[" + regex + "]{" + regex.length() + "}";
+        System.out.println(userDao.searchUser(regex));
+    }
 }

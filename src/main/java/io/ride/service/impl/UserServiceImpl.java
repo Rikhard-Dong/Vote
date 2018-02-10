@@ -44,6 +44,12 @@ public class UserServiceImpl implements UserService {
                 ResultDTO.FAIL("用户注册失败");
     }
 
+    @Override
+    public SimpleUserDTO getSimpleUser(int userId) throws SQLException {
+        User user = userDao.queryById(userId);
+        return new SimpleUserDTO(user);
+    }
+
     public boolean addLoginInfo(int userId, String loginIp) throws SQLException {
         UserLoginInfo info = new UserLoginInfo(userId, loginIp);
         return infoDao.addOne(info) != 0;

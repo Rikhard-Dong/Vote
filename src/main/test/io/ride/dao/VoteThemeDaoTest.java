@@ -41,4 +41,10 @@ public class VoteThemeDaoTest {
     public void getLasertInsert() throws SQLException {
         System.out.println(themeDao.getLeastInsert(2));
     }
+
+    @Test
+    public void queryByUserVotedTheme() throws SQLException {
+        System.out.println(themeDao.queryByUserVotedTheme(1).size());
+        System.out.println(themeDao.queryByUserVotedTheme(1));
+    }
 }

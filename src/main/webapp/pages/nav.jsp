@@ -19,6 +19,7 @@
         </div>
         <!-- End Header Navigation -->
 
+
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse" id="navbar-menu">
             <ul class="nav navbar-nav navbar-right">
@@ -36,6 +37,14 @@
                     <li><a href="javascript:void(0)" id="logout-btn">登出</a></li>
                 </c:if>
             </ul>
+
+            <form class="navbar-form navbar-right" method="post"
+                  action="${pageContext.request.contextPath}/search?op=search">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="搜索用户或者投票主题" name="content">
+                </div>
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
         </div><!-- /.navbar-collapse -->
     </div>
 </nav>

@@ -33,6 +33,12 @@ public class VoteThemeDao extends BaseDao {
     }
 
 
+    /**
+     * 查询所有投票
+     *
+     * @return
+     * @throws SQLException
+     */
     public List<VoteTheme> queryAll() throws SQLException {
         String sql = "select * from t_vote_theme";
         return runner.query(sql, new BeanListHandler<>(VoteTheme.class));
@@ -49,8 +55,15 @@ public class VoteThemeDao extends BaseDao {
         return runner.query(sql, new BeanListHandler<>(VoteTheme.class), start, offset);
     }
 
+    /**
+     * 查询用户发起的投票
+     *
+     * @param id 用户id
+     * @return 查询结果, VoteTheme的list
+     * @throws SQLException 数据库操作异常
+     */
     public List<VoteTheme> queryByUserId(int id) throws SQLException {
-        String sql = "select * from t_vote_theme where userId = ?";
+        String sql = "select * from t_vote_theme where userId = ? order by createTime desc";
         return runner.query(sql, new BeanListHandler<>(VoteTheme.class), id);
     }
 
@@ -72,5 +85,21 @@ public class VoteThemeDao extends BaseDao {
     public int getLeastInsert(int userId) throws SQLException {
         String sql = "select id from t_vote_theme where userId = ? order by createTime desc limit 1";
         return runner.query(sql, new ScalarHandler<Integer>(), userId);
+    }
+
+
+    /**
+     * 根据用户Id查询该用户参与过的投票主题
+     *
+     * @param userId 用户id
+     * @return 查询结果, VoteTheme的list
+     * @throws SQLException 数据库操作异常
+     */
+    public List<VoteTheme> queryByUserVotedTheme(int userId) throws SQLException {
+        String sql = "select distinct theme.* from t_vote_theme theme, t_vote_item item, t_vote_detail detail " +
+                "where theme.id = item.themeId and item.id = detail.itemId and detail.userId = ? " +
+                "order by detail.voteTime desc";
+
+        return runner.query(sql, new BeanListHandler<>(VoteTheme.class), userId);
     }
 }

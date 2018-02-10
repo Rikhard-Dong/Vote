@@ -1,6 +1,7 @@
 package io.ride.service;
 
 import io.ride.DTO.ResultDTO;
+import io.ride.DTO.SimpleUserDTO;
 import io.ride.PO.User;
 
 import java.sql.SQLException;
@@ -16,6 +17,14 @@ public interface UserService {
     User validateAccount(String account, String password) throws SQLException;
 
     ResultDTO addUser(String username, String password, String password2, String email, String defaultHeadImage) throws SQLException;
+
+    /**
+     * 得到用户的简要信息
+     *
+     * @param userId
+     * @return
+     */
+    SimpleUserDTO getSimpleUser(int userId) throws SQLException;
 
     /**
      * 用户登录记录

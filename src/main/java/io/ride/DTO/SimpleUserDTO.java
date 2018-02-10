@@ -1,6 +1,7 @@
 package io.ride.DTO;
 
 import io.ride.PO.User;
+import io.ride.util.DateUtil;
 
 import java.util.Date;
 
@@ -10,7 +11,9 @@ public class SimpleUserDTO {
     private String email;
     private String nickname;
     private String desc;
+    private String sex;
     private String headImage;
+    private String createTime;
 
 
     public SimpleUserDTO(User user) {
@@ -20,6 +23,24 @@ public class SimpleUserDTO {
         nickname = user.getNickname();
         desc = user.getDesc();
         headImage = user.getHeadImage();
+        this.sex = user.getSex();
+        createTime = DateUtil.date2StrCN(user.getCreateTime());
+    }
+
+    public String getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(String createTime) {
+        this.createTime = createTime;
+    }
+
+    public String getSex() {
+        return sex;
+    }
+
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     public String getHeadImage() {

@@ -12,6 +12,7 @@ public class SimpleVoteThemeDto {
     private String theme;
     private String desc;
     private String username;
+    private String nickname;
     private String headImage;
     private String countDown;
     private int status;
@@ -29,6 +30,7 @@ public class SimpleVoteThemeDto {
         this.themeId = theme.getId();
         this.userId = user.getId();
         this.isAnonymous = theme.getIsAnonymous();
+        this.nickname = user.getNickname();
         Date currDate = new Date();
         if (currDate.before(theme.getStartTime())) {
             // 未开始
@@ -47,6 +49,14 @@ public class SimpleVoteThemeDto {
         this.createTime = DateUtil.date2StrCN(theme.getCreateTime());
         this.startTime = DateUtil.date2StrCN(theme.getStartTime());
         this.endTime = DateUtil.date2StrCN(theme.getEndTime());
+    }
+
+    public String getNickname() {
+        return nickname;
+    }
+
+    public void setNickname(String nickname) {
+        this.nickname = nickname;
     }
 
     public int getIsAnonymous() {
