@@ -2,6 +2,7 @@ package io.ride.service.impl;
 
 import io.ride.DTO.ResultDTO;
 import io.ride.DTO.SearchUserDto;
+import io.ride.DTO.SearchVoteDTO;
 import io.ride.PO.User;
 import io.ride.PO.VoteTheme;
 import io.ride.dao.UserDao;
@@ -35,6 +36,19 @@ public class SearchServiceImpl implements SearchService {
 
     @Override
     public ResultDTO searchVote(String content) throws SQLException {
-        return null;
+        String regex = "[" + content + "]{" + content.length() + "}";
+        List<VoteTheme> themes = themeDao.searchTheme(regex);
+        if (themes == null || themes.size() == 0) {
+            return ResultDTO.FAIL("没有符合的投票(´ﾟдﾟ`)");
+        }
+
+        List<SearchVoteDTO> var1 = new ArrayList<>();
+        for (VoteTheme theme : themes) {
+            User user = userDao.queryById(theme.getUserId());
+            SearchVoteDTO var2 = new SearchVoteDTO(user, theme);
+            var1.add(var2);
+        }
+
+        return ResultDTO.SUCCESS("查询成功").addData("votes", var1);
     }
 }

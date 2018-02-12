@@ -2,6 +2,9 @@ package io.ride.DTO;
 
 import io.ride.PO.User;
 
+/**
+ * 用户搜索结果dto
+ */
 public class SearchUserDto {
     private int id;
     private String headImage;

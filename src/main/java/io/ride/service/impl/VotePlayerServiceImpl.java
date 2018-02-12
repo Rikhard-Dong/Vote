@@ -86,7 +86,7 @@ public class VotePlayerServiceImpl implements VotePlayerService {
         }
         VoteTheme theme = themeDao.queryByThemeId(player.getThemeId());
         Date curDate = new Date();
-        if (curDate.after(theme.getStartTime())) {
+        if (curDate.after(theme.getEndTime())) {
             updateStatus(userId);
             return ResultDTO.FAIL("该申请已过期!");
         }
@@ -124,7 +124,7 @@ public class VotePlayerServiceImpl implements VotePlayerService {
         for (VotePlayer player : players) {
             if (player.getStatus() == 0) {
                 VoteTheme theme = themeDao.queryByThemeId(player.getThemeId());
-                if (curDate.after(theme.getStartTime())) {
+                if (curDate.after(theme.getEndTime())) {
                     // 投票已经开始, 当前申请已过期 状态3 过期
                     playerDao.updateStatus(player.getId(), 3);
                 }

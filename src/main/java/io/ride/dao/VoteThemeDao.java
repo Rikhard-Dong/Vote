@@ -102,4 +102,16 @@ public class VoteThemeDao extends BaseDao {
 
         return runner.query(sql, new BeanListHandler<>(VoteTheme.class), userId);
     }
+
+    /**
+     * 根据主题或者主题描述搜索主题
+     *
+     * @param regex 正则表达式
+     * @return 搜索结果
+     * @throws SQLException 数据库异常
+     */
+    public List<VoteTheme> searchTheme(String regex) throws SQLException {
+        String sql = "select * from t_vote_theme where theme regexp ? or `desc` regexp ?";
+        return runner.query(sql, new BeanListHandler<>(VoteTheme.class), regex, regex);
+    }
 }

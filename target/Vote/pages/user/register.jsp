@@ -92,6 +92,8 @@
         </div>
     </div>
 </div>
+<%@include file="../messageModal.jsp" %>
+</body>
 <script>
     $('#register-submit').on('click', function () {
         console.log("register submit click....");
@@ -104,6 +106,9 @@
                 console.log(request);
                 if (request.code === 1) {
                     location.href = 'login.jsp'
+                } else if (request.code === 0) {
+                    $("#modal-body").empty().append(request.msg);
+                    $('#message-modal').modal('show');
                 }
             }
         })
@@ -113,5 +118,4 @@
         $(this).attr("src", '${pageContext.request.contextPath}/verify?time=' + new Date().getTime());
     });
 </script>
-</body>
 </html>

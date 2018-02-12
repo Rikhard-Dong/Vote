@@ -46,7 +46,9 @@ public class SearchServlet extends HttpServlet {
                     out.print(JacksonUtil.toJSon(result));
                     out.flush();
                 } else if (StringUtils.equals(search, "vote")) {
-
+                    result = searchService.searchVote(content);
+                    out.print(JacksonUtil.toJSon(result));
+                    out.flush();
                 }
             }
         } catch (SQLException e) {

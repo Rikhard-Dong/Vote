@@ -47,4 +47,11 @@ public class VoteThemeDaoTest {
         System.out.println(themeDao.queryByUserVotedTheme(1).size());
         System.out.println(themeDao.queryByUserVotedTheme(1));
     }
+
+    @Test
+    public void searchTheme() throws SQLException {
+        String regex = "[wechat]{6}";
+        System.out.println(themeDao.searchTheme(regex));
+
+    }
 }

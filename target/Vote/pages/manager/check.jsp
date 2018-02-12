@@ -221,10 +221,10 @@
                 result = eval("(" + result + ")");
                 console.log(result);
 
-                if (result.code == 0) {
+                if (result.code === 0) {
                     var info = $('<h2></h2>').append(result.msg);
                     $('#player-table-body').empty().append(info);
-                } else if (result.code == 1) {
+                } else if (result.code === 1) {
                     curr = result.data.pageHelper.curr;
 
                     var data = {
@@ -306,14 +306,14 @@
             success: function (result) {
                 result = eval("(" + result + ")");
                 console.log(result);
-                if (result.code == 1) {
+                if (result.code === 1) {
                     var data = {
                         'player': result.data.player
                     };
                     var playerTemp = template('player-detail-temp', data);
                     $('#player-detail-body').empty().append(playerTemp);
                     $('#player-detail-modal').modal('show');
-                } else if (code == 0) {
+                } else if (result.code === 0) {
                     $('#modal-body').empty().append(result.msg);
                     $('#message-modal').modal('show');
                 }

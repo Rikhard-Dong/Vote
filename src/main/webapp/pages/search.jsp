@@ -44,6 +44,31 @@
             font-weight: bold;
         }
 
+        .vote-head {
+            width: 160px;
+            height: 160px;
+            margin-bottom: 0.6rem;
+        }
+
+        .vote-wrapper {
+            margin-top: 1.2rem;
+            border-bottom: #eeeeee 2px solid;
+        }
+
+        .vote-title {
+            font-size: 32px;
+            font-weight: bold;
+        }
+
+        .vote-desc {
+            font-size: 22px;
+            color: #5e5e5e;
+        }
+
+        .vote-desc, .vote-status {
+            margin-top: .8rem;
+        }
+
     </style>
 </head>
 <body>
@@ -127,7 +152,32 @@
 </script>
 
 <script type="text/html" id="search-vote-temp">
+    {{each votes vote i}}
+    <div class="row vote-wrapper">
+        <div class="col-md-3">
+            <a href="${pageContext.request.contextPath}/user/detail?op=profile&userId={{vote.userId}}"
+               title="点击查看{{vote.nickname}}的主页">
+                <img src="${pageContext.request.contextPath}{{vote.headImage}}" alt="" class="img-circle vote-head">
+            </a>
+        </div>
 
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-xs-12 vote-title">
+                    <p><a href="${pageContext.request.contextPath}/vote/detail?op=detail&themeId={{vote.themeId}}">
+                        <h1>{{vote.title}}</h1>
+                    </a></p>
+                </div>
+                <div class="col-xs-12 vote-desc">
+                    <p>{{vote.desc}}</p>
+                </div>
+                <div class="col-xs-12 vote-status">
+                    <p>{{vote.status}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{/each}}
 </script>
 
 <script>
@@ -145,6 +195,7 @@
     function loadSearchResult(content) {
         console.log("search content " + content);
 
+        /* 用户搜索结果展示 */
         $.ajax({
             url: '${pageContext.request.contextPath}/search',
             method: 'GET',
@@ -165,6 +216,31 @@
                     };
                     const temp = template('search-user-temp', data);
                     $('#search-user').empty().append(temp);
+                }
+            }
+        });
+
+        /* 主题搜索结果展示 */
+        $.ajax({
+            url: '${pageContext.request.contextPath}/search',
+            method: 'GET',
+            data: {
+                'op': 'search',
+                'search': 'vote',
+                'content': content
+            },
+            success: function (result) {
+                result = eval("(" + result + ")");
+                console.log(result);
+                if (result.code === 0) {
+                    const errMsg = $('<h1></h1>').append(result.msg);
+                    $('#search-vote').empty().append(errMsg);
+                } else if (result.code === 1) {
+                    const data = {
+                        'votes': result.data.votes
+                    };
+                    const temp = template('search-vote-temp', data);
+                    $('#search-vote').empty().append(temp);
                 }
             }
         })

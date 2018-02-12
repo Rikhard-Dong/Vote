@@ -172,7 +172,7 @@
                 <%--<a href="javascript:void(0)" class="btn btn-default" id="show-result">查看结果</a>--%>
                 <%--</c:if>--%>
                 <%--  投票未开始 --%>
-                <c:if test="${sessionScope.theme.status == 0}">
+                <c:if test="${sessionScope.theme.status != 2}">
                     <c:if test="${not empty sessionScope.user}">
                         <c:if test="${sessionScope.user.id == sessionScope.theme.userId}">
                             <div class="row">
