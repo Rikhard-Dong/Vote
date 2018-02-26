@@ -69,6 +69,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-success" id="go-statistics-page">查看数据统计与投票记录</button>
                 <button type="button" class="btn btn-primary" id="go-theme-detail-btn">前往投票页查看</button>
             </div>
         </div>
@@ -260,14 +261,19 @@
             },
             success: function (result) {
                 result = eval("(" + result + ")");
-                if (result.code == 0) {
+                if (result.code === 0) {
                     $('#modal-body').empty().append(result.msg);
                     $('#message-modal').modal('show');
-                } else if (result.code == 1) {
+                } else if (result.code === 1) {
                     toPage(cur);
                 }
             }
         })
+    });
+
+    $('#go-statistics-page').click(function () {
+        window.location.href = "${pageContext.request.contextPath}/vote/statistics?op=statistics&themeId=" + themeId;
+
     });
 </script>
 </html>

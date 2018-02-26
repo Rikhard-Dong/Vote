@@ -1,5 +1,6 @@
 package io.ride.service.impl;
 
+import io.ride.DTO.RankDTO;
 import io.ride.DTO.ResultDTO;
 import io.ride.DTO.VoteDetailDTO;
 import io.ride.PO.User;
@@ -13,9 +14,8 @@ import io.ride.dao.VoteThemeDao;
 import io.ride.service.VoteItemService;
 
 import java.text.DecimalFormat;
-import java.util.Date;
+import java.util.*;
 import java.sql.SQLException;
-import java.util.List;
 
 public class VoteItemServiceImpl implements VoteItemService {
 
@@ -104,5 +104,75 @@ public class VoteItemServiceImpl implements VoteItemService {
         System.out.println("item service ======> " + detailDTO);
 
         return ResultDTO.SUCCESS("查询成功").addData("itemDetail", detailDTO);
+    }
+
+    @Override
+    public ResultDTO rankItems(int themeId) throws SQLException {
+        VoteTheme theme = themeDao.queryByThemeId(themeId);
+        if (theme == null) {
+            return ResultDTO.FAIL("该投票不存在=~=");
+        }
+
+        Date curr = new Date();
+        if (curr.before(theme.getStartTime())) {
+            return ResultDTO.FAIL("投票未开始");
+        }
+
+        List<VoteItem> items = itemDao.queryByThemeId(themeId);
+        List<RankDTO> ranks = new ArrayList<>();
+        if (items == null || items.size() <= 0) {
+            return ResultDTO.FAIL("当前没有选项");
+        }
+
+        long count = detailDao.countByThemeId(themeId);
+        DecimalFormat format = new DecimalFormat("#.00");
+        for (VoteItem item : items) {
+            double per;
+            long itemCount = detailDao.countByItemId(item.getId());
+            if (count == 0) {
+                per = 0;
+            } else {
+                per = itemCount * 1.0 / count;
+                per *= 100;
+                per = Double.parseDouble(format.format(per));
+            }
+
+            RankDTO rank = new RankDTO();
+            rank.setPer(per);
+            rank.setItem(item.getTitle());
+            rank.setDesc("(" + itemCount + "/" + count + ")");
+
+            ranks.add(rank);
+        }
+
+        Collections.sort(ranks, (rank1, rank2) -> rank1.getPer() > rank2.getPer() ? -1 : 1);
+
+        /*
+         * 增加排名信息
+         */
+        int rank = 1;
+        boolean first = true;
+        int cnt = 1;
+        double pre = 0;
+        for (RankDTO var : ranks) {
+            if (first) {
+                pre = var.getPer();
+                var.setItem("第" + rank + "名:" + var.getItem());
+                first = false;
+
+            } else {
+                if (pre == var.getPer()) {
+                    var.setItem("第" + rank + "名:" + var.getItem());
+                    cnt++;
+                } else {
+                    rank += cnt;
+                    cnt = 1;
+                    var.setItem("第" + rank + "名:" + var.getItem());
+                    pre = var.getPer();
+                }
+            }
+        }
+
+        return ResultDTO.SUCCESS("查询成功").addData("ranks", ranks);
     }
 }

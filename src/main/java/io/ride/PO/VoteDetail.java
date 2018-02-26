@@ -5,7 +5,7 @@ import java.util.Date;
 public class VoteDetail {
     private int id;
     private int itemId;
-    private int userId;
+    private Integer userId;
     private String openId;  // 微信ID
     private String ipAddress;
     private Date voteTime;
@@ -51,11 +51,11 @@ public class VoteDetail {
         this.itemId = itemId;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 

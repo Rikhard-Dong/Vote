@@ -6,13 +6,15 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
-        System.out.println("管理r".length());
+
+        double a = 17.12;
+        double b = 17.120001;
+
+        System.out.println(a == b);
     }
 
 

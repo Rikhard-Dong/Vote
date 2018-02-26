@@ -15,6 +15,7 @@ public class VoteDetailDTO {
     private List<VoteItem> items;
 
     public VoteDetailDTO() {
+
     }
 
     public VoteDetailDTO(int themeId, int isSingle, int status, int num, int isEmpty) {

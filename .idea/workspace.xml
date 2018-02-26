@@ -7,29 +7,52 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4928843d-db7f-4274-b0e3-2cfafbcd5e52" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/io/ride/DTO/SearchVoteDTO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/io/ride/DTO/RankDTO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/io/ride/DTO/SimpleVoteDetailDTO.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/io/ride/servlet/VoteStatisticsServlet.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/test/io/ride/service/impl/VoteDetailServiceImplTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/test/io/ride/service/impl/VoteItemServiceImplTest.java" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/webapp/pages/manager/statistics.jsp" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/DTO/SearchUserDto.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/DTO/SearchUserDto.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/dao/VoteThemeDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/dao/VoteThemeDao.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/service/SearchService.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/service/SearchService.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/service/impl/SearchServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/service/impl/SearchServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VotePlayerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VotePlayerServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/servlet/SearchServlet.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/servlet/SearchServlet.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/io/ride/dao/VoteThemeDaoTest.java" afterPath="$PROJECT_DIR$/src/main/test/io/ride/dao/VoteThemeDaoTest.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/manager/check.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/manager/check.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/search.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/search.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/user/register.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/user/register.jsp" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/vote/detail.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/vote/detail.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/dao/VoteThemeDao.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/dao/VoteThemeDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/service/impl/VotePlayerServiceImpl.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/service/impl/VotePlayerServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/Vote/pages/index.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Vote/pages/manager/check.jsp" afterPath="$PROJECT_DIR$/target/Vote/pages/manager/check.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/Vote/pages/test.html" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/target/Vote/pages/user/register.jsp" afterPath="$PROJECT_DIR$/target/Vote/pages/user/register.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/Vote/pages/vote/detail.jsp" afterPath="$PROJECT_DIR$/target/Vote/pages/vote/detail.jsp" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/dao/VoteThemeDao.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/dao/VoteThemeDao.class" />
-      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/service/impl/VotePlayerServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/service/impl/VotePlayerServiceImpl.class" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/io/ride/dao/VoteThemeDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/io/ride/dao/VoteThemeDaoTest.class" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/DTO/ResultDTO.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/DTO/ResultDTO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/DTO/VoteDetailDTO.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/DTO/VoteDetailDTO.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/PO/VoteDetail.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/PO/VoteDetail.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/dao/VoteDetailDao.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/dao/VoteDetailDao.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/service/UserService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/service/VoteDetailService.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/service/VoteDetailService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/service/VoteItemService.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/service/VoteItemService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/service/VotePlayerService.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/service/VotePlayerService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/service/VoteThemeService.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/service/VoteThemeService.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteDetailServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteDetailServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteItemServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteItemServiceImpl.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/servlet/UserServlet.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/servlet/UserServlet.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/io/ride/test/Test.java" afterPath="$PROJECT_DIR$/src/main/java/io/ride/test/Test.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/io/ride/dao/VoteDetailDaoTest.java" afterPath="$PROJECT_DIR$/src/main/test/io/ride/dao/VoteDetailDaoTest.java" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/manager/vote.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/manager/vote.jsp" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/pages/vote/start.jsp" afterPath="$PROJECT_DIR$/src/main/webapp/pages/vote/start.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/DTO/ResultDTO.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/DTO/ResultDTO.class" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/DTO/VoteDetailDTO.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/DTO/VoteDetailDTO.class" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/PO/VoteDetail.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/PO/VoteDetail.class" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/dao/VoteDetailDao.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/dao/VoteDetailDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/service/VoteDetailService.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/service/VoteDetailService.class" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/service/VoteItemService.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/service/VoteItemService.class" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/service/impl/VoteDetailServiceImpl.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/service/impl/VoteDetailServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/service/impl/VoteItemServiceImpl.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/service/impl/VoteItemServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/servlet/UserServlet.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/servlet/UserServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/test/Test.class" afterPath="$PROJECT_DIR$/target/Vote/WEB-INF/classes/io/ride/test/Test.class" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/pages/manager/vote.jsp" afterPath="$PROJECT_DIR$/target/Vote/pages/manager/vote.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/Vote/pages/vote/start.jsp" afterPath="$PROJECT_DIR$/target/Vote/pages/vote/start.jsp" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/DTO/ResultDTO.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/DTO/ResultDTO.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/DTO/VoteDetailDTO.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/DTO/VoteDetailDTO.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/PO/VoteDetail.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/PO/VoteDetail.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/dao/VoteDetailDao.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/dao/VoteDetailDao.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/service/VoteDetailService.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/service/VoteDetailService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/service/VoteItemService.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/service/VoteItemService.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/service/impl/VoteDetailServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/service/impl/VoteDetailServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/service/impl/VoteItemServiceImpl.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/service/impl/VoteItemServiceImpl.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/servlet/UserServlet.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/servlet/UserServlet.class" />
+      <change beforePath="$PROJECT_DIR$/target/classes/io/ride/test/Test.class" afterPath="$PROJECT_DIR$/target/classes/io/ride/test/Test.class" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/io/ride/dao/VoteDetailDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/io/ride/dao/VoteDetailDaoTest.class" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -77,7 +100,14 @@
         <item name="db_vote@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="db_vote: schema" type="c314c289:MysqlImplModel$Schema" />
-        <item name="t_vote_player: table" type="98d5ac3d:MysqlImplModel$Table" />
+        <item name="t_vote_detail: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="db_vote@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="db_vote: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="t_vote_item: table" type="98d5ac3d:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -95,61 +125,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SimplePlayerDto.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/SimplePlayerDto.java">
+      <file leaf-file-name="VoteDetailDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/VoteDetailDao.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="588">
-              <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
+            <state relative-caret-position="4816">
+              <caret line="178" column="37" lean-forward="false" selection-start-line="178" selection-start-column="37" selection-end-line="178" selection-end-column="37" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VotePlayerServlet.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/VotePlayerServlet.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1988">
-              <caret line="85" column="46" lean-forward="false" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VotePlayerService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/VotePlayerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VotePlayer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/PO/VotePlayer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2548">
-              <caret line="147" column="19" lean-forward="false" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
-              <folding>
-                <element signature="e#2833#2834#0" expanded="true" />
-                <element signature="e#2862#2863#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="VotePlayerServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/VotePlayerServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3024">
-              <caret line="126" column="52" lean-forward="false" selection-start-line="126" selection-start-column="52" selection-end-line="126" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="t_vote_player" pinned="false" current-in-tab="true">
-        <entry file="das://table:/b3f94d2a/155c305f-d657-4e09-a292-f4561b74ab38/db_vote.t_vote_player">
+      <file leaf-file-name="t_vote_detail" pinned="false" current-in-tab="false">
+        <entry file="das://table:/b3f94d2a/155c305f-d657-4e09-a292-f4561b74ab38/db_vote.t_vote_detail">
           <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
             <state>
               <filtering enabled="true" />
@@ -157,41 +144,81 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="check.jsp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/manager/check.jsp">
+      <file leaf-file-name="VoteDetailServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteDetailServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2492">
-              <caret line="89" column="38" lean-forward="false" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
+            <state relative-caret-position="3528">
+              <caret line="142" column="69" lean-forward="false" selection-start-line="142" selection-start-column="69" selection-end-line="142" selection-end-column="69" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VoteThemeDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/VoteThemeDao.java">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2968">
-              <caret line="113" column="79" lean-forward="false" selection-start-line="113" selection-start-column="79" selection-end-line="113" selection-end-column="79" />
+            <state relative-caret-position="5796">
+              <caret line="207" column="19" lean-forward="false" selection-start-line="200" selection-start-column="16" selection-end-line="207" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VoteDetailDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/VoteDetailDao.java">
+      <file leaf-file-name="vote.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/manager/vote.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="728">
-              <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
+            <state relative-caret-position="7672">
+              <caret line="274" column="117" lean-forward="false" selection-start-line="274" selection-start-column="117" selection-end-line="274" selection-end-column="117" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VotePlayerDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/VotePlayerDao.java">
+      <file leaf-file-name="statistics.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/manager/statistics.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="532">
+              <caret line="19" column="61" lean-forward="false" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="start.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/vote/start.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="5880">
+              <caret line="210" column="9" lean-forward="false" selection-start-line="210" selection-start-column="9" selection-end-line="210" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="user.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/manager/user.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VoteItemServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteItemServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2184">
+              <caret line="78" column="8" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VoteStatisticsServlet.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/VoteStatisticsServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1680">
+              <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -206,8 +233,8 @@
         <option value="JavaScript File" />
         <option value="HTML File" />
         <option value="Interface" />
-        <option value="JUnit4 Test Class" />
         <option value="Jsp File" />
+        <option value="JUnit4 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -241,42 +268,19 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/dao/VoteItemDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/VoteDetailService.java" />
-        <option value="$PROJECT_DIR$/src/main/test/io/ride/dao/VoteDetailDaoTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/wechat/service/CoreService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/wechat/service/impl/ThemeServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/wechat/servlet/WechatServlet.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/155c305f-d657-4e09-a292-f4561b74ab38/console.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/util/DateUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteDetailServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/vote/start.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/util/CusAccessObjectUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/DTO/ThemeDataPieDTO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/servlet/VoteThemeDetailServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteItemServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/dao/VoteDetailDao.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/manager/vote.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/wechat/util/CommonUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/js/commons.js" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/filter/AdminFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/servlet/IndexServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/wechat/util/MenuUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/wechat/PO/Follow.java" />
         <option value="$PROJECT_DIR$/src/main/test/io/ride/wechat/service/impl/FollowServiceImplTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/servlet/VoteServlet.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/servlet/RedirectIndexServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/servlet/UserServlet.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/DTO/SimpleUserDTO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/index.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/DTO/SimpleVoteThemeDto.java" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/VoteThemeService.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteThemeServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/servlet/UserDetailServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/user/profile.jsp" />
-        <option value="$PROJECT_DIR$/src/main/java/io/ride/test/Test.java" />
         <option value="$PROJECT_DIR$/src/main/test/io/ride/dao/UserDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/dao/UserDao.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/nav.jsp" />
@@ -289,9 +293,32 @@
         <option value="$PROJECT_DIR$/src/main/java/io/ride/servlet/SearchServlet.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/search.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/user/register.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/pages/vote/detail.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VotePlayerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/pages/manager/check.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/vote/start.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/vote/detail.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/servlet/VoteStatisticsSerlvet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/manager/vote.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/VoteThemeService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/UserService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/servlet/UserServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/VotePlayerService.java" />
+        <option value="$PROJECT_DIR$/src/main/test/io/ride/dao/VoteDetailDaoTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/DTO/VoteDetailDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/test/io/ride/service/impl/VoteDetailServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/DTO/ResultDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/VoteItemService.java" />
+        <option value="$PROJECT_DIR$/src/main/test/io/ride/service/impl/VoteItemServiceImplTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/DTO/RankDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/test/Test.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteItemServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/VoteDetailService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/PO/VoteDetail.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/DTO/SimpleVoteDetailDTO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteDetailServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/dao/VoteDetailDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/io/ride/servlet/VoteStatisticsServlet.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/pages/manager/statistics.jsp" />
       </list>
     </option>
   </component>
@@ -351,6 +378,9 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -384,13 +414,180 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="ride" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ride" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ride" type="462c0819:PsiDirectoryNode" />
+              <item name="DTO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ride" type="462c0819:PsiDirectoryNode" />
+              <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ride" type="462c0819:PsiDirectoryNode" />
+              <item name="listener" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ride" type="462c0819:PsiDirectoryNode" />
+              <item name="PO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ride" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ride" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ride" type="462c0819:PsiDirectoryNode" />
+              <item name="servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="ride" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="fonts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="manager" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Vote" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Vote" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="vote" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -410,14 +607,23 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="io.ride.service.impl" />
       <recent name="io.ride.dao" />
       <recent name="io.ride.wechat.service.impl" />
       <recent name="io.ride.util" />
-      <recent name="io.ride.service.impl" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/src/main" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/pages" />
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="io.ride.service.impl" />
       <recent name="io.ride.service" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/webapp" />
@@ -425,15 +631,6 @@
       <recent name="$PROJECT_DIR$/src/main/webapp/img" />
       <recent name="$PROJECT_DIR$/src/main/webapp/css" />
       <recent name="$PROJECT_DIR$/src/main/resources" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/src/main" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/pages" />
-      <recent name="$PROJECT_DIR$/src/main/webapp" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -489,19 +686,19 @@
       <module name="" />
       <envs />
     </configuration>
-    <configuration name="FollowServiceImplTest.getFollow" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VoteDetailDaoTest.countByWechatAndLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="io.ride.wechat.service.impl.*" />
+          <option name="PATTERN" value="io.ride.dao.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="Vote" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="io.ride.wechat.service.impl" />
-      <option name="MAIN_CLASS_NAME" value="io.ride.wechat.service.impl.FollowServiceImplTest" />
-      <option name="METHOD_NAME" value="getFollow" />
+      <option name="PACKAGE_NAME" value="io.ride.dao" />
+      <option name="MAIN_CLASS_NAME" value="io.ride.dao.VoteDetailDaoTest" />
+      <option name="METHOD_NAME" value="countByWechatAndLogin" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -514,19 +711,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="UserDaoTest.searchUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VoteDetailServiceImplTest.votedStatistics" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="io.ride.dao.*" />
+          <option name="PATTERN" value="io.ride.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="Vote" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="io.ride.dao" />
-      <option name="MAIN_CLASS_NAME" value="io.ride.dao.UserDaoTest" />
-      <option name="METHOD_NAME" value="searchUser" />
+      <option name="PACKAGE_NAME" value="io.ride.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="io.ride.service.impl.VoteDetailServiceImplTest" />
+      <option name="METHOD_NAME" value="votedStatistics" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -539,19 +736,19 @@
       <envs />
       <patterns />
     </configuration>
-    <configuration name="VoteThemeDaoTest.queryByUserVotedTheme" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="VoteItemServiceImplTest.rankItems" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
-          <option name="PATTERN" value="io.ride.dao.*" />
+          <option name="PATTERN" value="io.ride.service.impl.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
       <module name="Vote" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="io.ride.dao" />
-      <option name="MAIN_CLASS_NAME" value="io.ride.dao.VoteThemeDaoTest" />
-      <option name="METHOD_NAME" value="queryByUserVotedTheme" />
+      <option name="PACKAGE_NAME" value="io.ride.service.impl" />
+      <option name="MAIN_CLASS_NAME" value="io.ride.service.impl.VoteItemServiceImplTest" />
+      <option name="METHOD_NAME" value="rankItems" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -749,19 +946,19 @@
     <list size="7">
       <item index="0" class="java.lang.String" itemvalue="Maven.tomcat:deploy" />
       <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Tomcat" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Test" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.FollowServiceImplTest.getFollow" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.VoteThemeDaoTest.queryByUserVotedTheme" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.UserDaoTest.searchUser" />
-      <item index="6" class="java.lang.String" itemvalue="JUnit.VoteThemeDaoTest.searchTheme" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.VoteThemeDaoTest.searchTheme" />
+      <item index="3" class="java.lang.String" itemvalue="JUnit.VoteDetailDaoTest.countByWechatAndLogin" />
+      <item index="4" class="java.lang.String" itemvalue="JUnit.VoteDetailServiceImplTest.votedStatistics" />
+      <item index="5" class="java.lang.String" itemvalue="JUnit.VoteItemServiceImplTest.rankItems" />
+      <item index="6" class="java.lang.String" itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.VoteThemeDaoTest.searchTheme" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.UserDaoTest.searchUser" />
-        <item index="2" class="java.lang.String" itemvalue="Application.Test" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.VoteThemeDaoTest.queryByUserVotedTheme" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.FollowServiceImplTest.getFollow" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.VoteItemServiceImplTest.rankItems" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Test" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.VoteDetailServiceImplTest.votedStatistics" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.VoteDetailDaoTest.countByWechatAndLogin" />
+        <item index="4" class="java.lang.String" itemvalue="JUnit.VoteThemeDaoTest.searchTheme" />
       </list>
     </recent_temporary>
   </component>
@@ -792,7 +989,8 @@
       <workItem from="1518070890705" duration="29000" />
       <workItem from="1518071003088" duration="5958000" />
       <workItem from="1518153993177" duration="36002000" />
-      <workItem from="1518412994803" duration="380000" />
+      <workItem from="1518412994803" duration="28914000" />
+      <workItem from="1519622996591" duration="22000" />
     </task>
     <task id="LOCAL-00001" summary="使用highcharts将投票结果可视化">
       <created>1517809302132</created>
@@ -815,43 +1013,50 @@
       <option name="project" value="LOCAL" />
       <updated>1518238418061</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="增加对投票的搜索">
+      <created>1518413462072</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1518413462072</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="UserDaoTest_searchUser - 2018.02.09 at 20h 40m 43s.xml">
-      <configuration name="UserDaoTest.searchUser" configurationId="JUnit" />
+    <history-entry file="VoteItemServiceImplTest_rankItems - 2018.02.13 at 14h 04m 04s.xml">
+      <configuration name="VoteItemServiceImplTest.rankItems" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="UserDaoTest_searchUser - 2018.02.09 at 20h 41m 19s.xml">
-      <configuration name="UserDaoTest.searchUser" configurationId="JUnit" />
+    <history-entry file="VoteItemServiceImplTest_rankItems - 2018.02.13 at 14h 04m 25s.xml">
+      <configuration name="VoteItemServiceImplTest.rankItems" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VoteDetailDaoTest_getLeastDetail - 2018.02.04 at 15h 44m 05s.xml">
-      <configuration name="VoteDetailDaoTest.getLeastDetail" configurationId="JUnit" />
+    <history-entry file="VoteItemServiceImplTest_rankItems - 2018.02.13 at 14h 08m 29s.xml">
+      <configuration name="VoteItemServiceImplTest.rankItems" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VoteDetailDaoTest_getLeastDetail - 2018.02.04 at 15h 54m 10s.xml">
-      <configuration name="VoteDetailDaoTest.getLeastDetail" configurationId="JUnit" />
+    <history-entry file="VoteItemServiceImplTest_rankItems - 2018.02.13 at 14h 11m 59s.xml">
+      <configuration name="VoteItemServiceImplTest.rankItems" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VoteThemeDaoTest_insertOne - 2018.01.24 at 12h 30m 03s.xml">
-      <configuration name="VoteThemeDaoTest.insertOne" configurationId="JUnit" />
+    <history-entry file="VoteItemServiceImplTest_rankItems - 2018.02.13 at 14h 16m 24s.xml">
+      <configuration name="VoteItemServiceImplTest.rankItems" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VoteThemeDaoTest_queryByUserVotedTheme - 2018.02.09 at 16h 20m 00s.xml">
-      <configuration name="VoteThemeDaoTest.queryByUserVotedTheme" configurationId="JUnit" />
+    <history-entry file="VoteItemServiceImplTest_rankItems - 2018.02.13 at 14h 17m 05s.xml">
+      <configuration name="VoteItemServiceImplTest.rankItems" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VoteThemeDaoTest_queryByUserVotedTheme - 2018.02.09 at 16h 20m 39s.xml">
-      <configuration name="VoteThemeDaoTest.queryByUserVotedTheme" configurationId="JUnit" />
+    <history-entry file="VoteItemServiceImplTest_rankItems - 2018.02.13 at 14h 20m 21s.xml">
+      <configuration name="VoteItemServiceImplTest.rankItems" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VoteThemeDaoTest_queryByUserVotedTheme - 2018.02.09 at 16h 21m 54s.xml">
-      <configuration name="VoteThemeDaoTest.queryByUserVotedTheme" configurationId="JUnit" />
+    <history-entry file="VoteItemServiceImplTest_rankItems - 2018.02.13 at 14h 21m 40s.xml">
+      <configuration name="VoteItemServiceImplTest.rankItems" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VoteThemeDaoTest_searchTheme - 2018.02.10 at 12h 58m 46s.xml">
-      <configuration name="VoteThemeDaoTest.searchTheme" configurationId="JUnit" />
+    <history-entry file="VoteItemServiceImplTest_rankItems - 2018.02.13 at 14h 31m 32s.xml">
+      <configuration name="VoteItemServiceImplTest.rankItems" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="VoteThemeDaoTest_searchTheme - 2018.02.10 at 12h 59m 26s.xml">
-      <configuration name="VoteThemeDaoTest.searchTheme" configurationId="JUnit" />
+    <history-entry file="VoteItemServiceImplTest_rankItems - 2018.02.13 at 14h 32m 34s.xml">
+      <configuration name="VoteItemServiceImplTest.rankItems" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="376122000" />
+    <option name="totallyTimeSpent" value="404678000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -883,9 +1088,9 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32937366" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32900432" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22112212" sideWeight="0.49785176" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5214521" sideWeight="0.49785176" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32893288" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24865447" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25242195" sideWeight="0.5" order="7" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="BPMNPalette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -911,11 +1116,12 @@
     <MESSAGE value="使用highcharts将投票结果可视化" />
     <MESSAGE value="完善了微信访问的部分" />
     <MESSAGE value="增加用户详情页和用户搜索功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="增加用户详情页和用户搜索功能" />
+    <MESSAGE value="增加对投票的搜索" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加对投票的搜索" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="8" />
+      <option name="time" value="9" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -924,53 +1130,19 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/test/io/ride/wechat/service/impl/FollowServiceImplTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/RedirectIndexServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="16" column="47" lean-forward="false" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
+        <state relative-caret-position="700">
+          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="das://table:/b3f94d2a/155c305f-d657-4e09-a292-f4561b74ab38/db_vote.t_wechat_follow">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/UserLoginInfoDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/UserDetailServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="8" column="13" lean-forward="false" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/b3f94d2a/155c305f-d657-4e09-a292-f4561b74ab38/db_vote.t_user">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/Vote/upload/head/f632d3523e1a4d59ade8cc959dab9ab5.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/Vote/upload/head/bdbd47ff779c48399c4425da43abf8f0.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/target/Vote/upload/head/4a76dcc69184468cbdef427367f73fa8.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/UserServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-784">
-          <caret line="54" column="46" lean-forward="false" selection-start-line="54" selection-start-column="46" selection-end-line="54" selection-end-column="46" />
+        <state relative-caret-position="700">
+          <caret line="41" column="1" lean-forward="false" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -978,13 +1150,69 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="28">
           <caret line="30" column="13" lean-forward="false" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/UserServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/VerifyCodeServlet.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1372">
-          <caret line="49" column="39" lean-forward="false" selection-start-line="49" selection-start-column="39" selection-end-line="49" selection-end-column="39" />
+        <state relative-caret-position="140">
+          <caret line="17" column="13" lean-forward="false" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/VotePlayerServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1650">
+          <caret line="85" column="46" lean-forward="false" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/vote/detail.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8475">
+          <caret line="466" column="42" lean-forward="true" selection-start-line="466" selection-start-column="42" selection-end-line="466" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/PO/VoteTheme.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/VoteServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="588">
+          <caret line="61" column="16" lean-forward="false" selection-start-line="61" selection-start-column="16" selection-end-line="61" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/SearchService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://table:/b3f94d2a/155c305f-d657-4e09-a292-f4561b74ab38/db_vote.t_vote_item">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/io/ride/dao/VoteDetailDaoTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="19" column="68" lean-forward="false" selection-start-line="19" selection-start-column="68" selection-end-line="19" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -996,10 +1224,287 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/VoteServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/search.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3556">
-          <caret line="158" column="44" lean-forward="false" selection-start-line="158" selection-start-column="44" selection-end-line="158" selection-end-column="44" />
+        <state relative-caret-position="224">
+          <caret line="11" column="0" lean-forward="false" selection-start-line="11" selection-start-column="0" selection-end-line="20" selection-end-column="81" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/ArrayList.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="456">
+          <caret line="38" column="11" lean-forward="false" selection-start-line="38" selection-start-column="11" selection-end-line="38" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/io/ride/service/impl/VoteDetailServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="45" lean-forward="false" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/ResultDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="47" column="0" lean-forward="true" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteThemeServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="781">
+          <caret line="166" column="21" lean-forward="false" selection-start-line="166" selection-start-column="21" selection-end-line="166" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/SimpleVoteThemeDto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="17" column="22" lean-forward="false" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/VoteThemeService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="104">
+          <caret line="74" column="14" lean-forward="false" selection-start-line="74" selection-start-column="14" selection-end-line="74" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/VotePlayerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="28">
+          <caret line="7" column="0" lean-forward="true" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/VoteThemeDetailServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2330">
+          <caret line="140" column="42" lean-forward="false" selection-start-line="140" selection-start-column="42" selection-end-line="140" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/PO/VoteItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-224">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/Collections.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="42" column="57" lean-forward="false" selection-start-line="42" selection-start-column="57" selection-end-line="42" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/RankDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="608">
+          <caret line="48" column="0" lean-forward="false" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#358#359#0" expanded="true" />
+            <element signature="e#385#386#0" expanded="true" />
+            <element signature="e#425#426#0" expanded="true" />
+            <element signature="e#457#458#0" expanded="true" />
+            <element signature="e#488#489#0" expanded="true" />
+            <element signature="e#515#516#0" expanded="true" />
+            <element signature="e#555#556#0" expanded="true" />
+            <element signature="e#587#588#0" expanded="true" />
+            <element signature="e#617#618#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#711#712#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-1.8.0-openjdk-amd64/jre/lib/rt.jar!/java/util/Comparator.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="16" column="17" lean-forward="false" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/VotePlayerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="810">
+          <caret line="126" column="52" lean-forward="false" selection-start-line="126" selection-start-column="52" selection-end-line="126" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/SearchServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="15" column="13" lean-forward="false" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/test/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="224">
+          <caret line="14" column="28" lean-forward="false" selection-start-line="14" selection-start-column="28" selection-end-line="14" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/test/io/ride/service/impl/VoteItemServiceImplTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="15" column="45" lean-forward="false" selection-start-line="15" selection-start-column="45" selection-end-line="15" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/UserServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1786">
+          <caret line="182" column="0" lean-forward="true" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/VoteItemService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="47" column="14" lean-forward="false" selection-start-line="47" selection-start-column="14" selection-end-line="47" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/filter/CharacterEncodingFilter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="130">
+          <caret line="29" column="0" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/user/profile.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="144" column="43" lean-forward="false" selection-start-line="144" selection-start-column="27" selection-end-line="144" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/VoteItemDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-308">
+          <caret line="10" column="13" lean-forward="false" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/UserService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="49" column="21" lean-forward="false" selection-start-line="49" selection-start-column="21" selection-end-line="49" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/VoteDetailService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="700">
+          <caret line="29" column="68" lean-forward="false" selection-start-line="29" selection-start-column="68" selection-end-line="29" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-272">
+          <caret line="70" column="0" lean-forward="true" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/VoteDetailDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="112">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/PO/VoteDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="784">
+          <caret line="34" column="23" lean-forward="true" selection-start-line="34" selection-start-column="23" selection-end-line="34" selection-end-column="23" />
+          <folding>
+            <element signature="e#1075#1076#0" expanded="false" />
+            <element signature="e#1104#1105#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/SimpleVoteDetailDTO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1596">
+          <caret line="60" column="33" lean-forward="false" selection-start-line="60" selection-start-column="33" selection-end-line="60" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#760#761#0" expanded="true" />
+            <element signature="e#791#792#0" expanded="true" />
+            <element signature="e#836#837#0" expanded="true" />
+            <element signature="e#876#877#0" expanded="true" />
+            <element signature="e#910#911#0" expanded="true" />
+            <element signature="e#939#940#0" expanded="true" />
+            <element signature="e#984#985#0" expanded="true" />
+            <element signature="e#1020#1021#0" expanded="true" />
+            <element signature="e#1056#1057#0" expanded="true" />
+            <element signature="e#1088#1089#0" expanded="true" />
+            <element signature="e#1138#1139#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+            <element signature="e#1214#1215#0" expanded="true" />
+            <element signature="e#1243#1244#0" expanded="true" />
+            <element signature="e#1288#1289#0" expanded="true" />
+            <element signature="e#1324#1325#0" expanded="true" />
+            <element signature="e#1359#1360#0" expanded="true" />
+            <element signature="e#1390#1391#0" expanded="true" />
+            <element signature="e#1438#1439#0" expanded="true" />
+            <element signature="e#1478#1479#0" expanded="true" />
+            <element signature="e#1511#1512#0" expanded="true" />
+            <element signature="e#1540#1541#0" expanded="true" />
+            <element signature="e#1584#1585#0" expanded="true" />
+            <element signature="e#1620#1621#0" expanded="true" />
+            <element signature="e#1656#1657#0" expanded="true" />
+            <element signature="e#1688#1689#0" expanded="true" />
+            <element signature="e#1738#1739#0" expanded="true" />
+            <element signature="e#1780#1781#0" expanded="true" />
+            <element signature="e#1816#1817#0" expanded="true" />
+            <element signature="e#1848#1849#0" expanded="true" />
+            <element signature="e#1898#1899#0" expanded="true" />
+            <element signature="e#1940#1941#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/VoteDetailDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4816">
+          <caret line="178" column="37" lean-forward="false" selection-start-line="178" selection-start-column="37" selection-end-line="178" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,56 +1515,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/VoteThemeDetailServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteDetailServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="44" column="46" lean-forward="false" selection-start-line="44" selection-start-column="40" selection-end-line="44" selection-end-column="46" />
+        <state relative-caret-position="3528">
+          <caret line="142" column="69" lean-forward="false" selection-start-line="142" selection-start-column="69" selection-end-line="142" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/VoteThemeService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/index.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="972">
-          <caret line="45" column="35" lean-forward="false" selection-start-line="45" selection-start-column="35" selection-end-line="45" selection-end-column="35" />
+        <state relative-caret-position="5796">
+          <caret line="207" column="19" lean-forward="false" selection-start-line="200" selection-start-column="16" selection-end-line="207" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/UserDetailServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/manager/vote.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="87">
-          <caret line="41" column="1" lean-forward="false" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
+        <state relative-caret-position="7672">
+          <caret line="274" column="117" lean-forward="false" selection-start-line="274" selection-start-column="117" selection-end-line="274" selection-end-column="117" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/test/Test.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/vote/start.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="14" column="31" lean-forward="false" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+        <state relative-caret-position="5880">
+          <caret line="210" column="9" lean-forward="false" selection-start-line="210" selection-start-column="9" selection-end-line="210" selection-end-column="9" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/io/ride/dao/UserDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="616">
-          <caret line="26" column="14" lean-forward="false" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteThemeServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-8">
-          <caret line="190" column="72" lean-forward="true" selection-start-line="190" selection-start-column="72" selection-end-line="190" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/messageModal.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/manager/user.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -1067,232 +1555,27 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/RedirectIndexServlet.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/VoteItemServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="700">
-          <caret line="34" column="0" lean-forward="false" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/nav.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="48" column="10" lean-forward="false" selection-start-line="48" selection-start-column="10" selection-end-line="48" selection-end-column="10" />
+        <state relative-caret-position="2184">
+          <caret line="78" column="8" lean-forward="false" selection-start-line="78" selection-start-column="8" selection-end-line="78" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/user/profile.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/VoteStatisticsServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1680">
+          <caret line="60" column="13" lean-forward="false" selection-start-line="60" selection-start-column="13" selection-end-line="60" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/manager/statistics.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="532">
-          <caret line="52" column="9" lean-forward="false" selection-start-line="52" selection-start-column="9" selection-end-line="52" selection-end-column="9" />
+          <caret line="19" column="61" lean-forward="false" selection-start-line="19" selection-start-column="61" selection-end-line="19" selection-end-column="61" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3270">
-          <caret line="22" column="42" lean-forward="true" selection-start-line="22" selection-start-column="42" selection-end-line="22" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/test/io/ride/dao/VoteThemeDaoTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="53" column="41" lean-forward="false" selection-start-line="53" selection-start-column="41" selection-end-line="53" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/VoteDetailDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1484">
-          <caret line="83" column="26" lean-forward="false" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/SimpleUserDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="29" column="33" lean-forward="false" selection-start-line="29" selection-start-column="33" selection-end-line="29" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/SearchVoteDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="12" lean-forward="false" selection-start-line="9" selection-start-column="12" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/SearchUserDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-532">
-          <caret line="5" column="12" lean-forward="false" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/SearchServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="47" column="64" lean-forward="true" selection-start-line="47" selection-start-column="64" selection-end-line="47" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/SearchService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/SearchServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="50" column="32" lean-forward="false" selection-start-line="50" selection-start-column="32" selection-end-line="50" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="28">
-          <caret line="23" column="81" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/user/register.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="524">
-          <caret line="114" column="7" lean-forward="true" selection-start-line="114" selection-start-column="7" selection-end-line="114" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/user/login.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1736">
-          <caret line="25" column="33" lean-forward="false" selection-start-line="25" selection-start-column="33" selection-end-line="25" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/vote/detail.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="174" column="57" lean-forward="false" selection-start-line="174" selection-start-column="57" selection-end-line="174" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/b3f94d2a/155c305f-d657-4e09-a292-f4561b74ab38/db_vote.t_vote_theme">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/search.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="60" column="0" lean-forward="false" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/PlayerDetailDTO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/SimpleVoteThemeDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="33" column="8" lean-forward="true" selection-start-line="33" selection-start-column="8" selection-end-line="46" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/PO/VotePlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2548">
-          <caret line="147" column="19" lean-forward="false" selection-start-line="147" selection-start-column="19" selection-end-line="147" selection-end-column="19" />
-          <folding>
-            <element signature="e#2833#2834#0" expanded="true" />
-            <element signature="e#2862#2863#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/DTO/SimplePlayerDto.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="588">
-          <caret line="21" column="33" lean-forward="false" selection-start-line="21" selection-start-column="33" selection-end-line="21" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/servlet/VotePlayerServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1988">
-          <caret line="85" column="46" lean-forward="false" selection-start-line="85" selection-start-column="46" selection-end-line="85" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/VotePlayerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="8" column="14" lean-forward="false" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/VoteThemeDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2968">
-          <caret line="113" column="79" lean-forward="false" selection-start-line="113" selection-start-column="79" selection-end-line="113" selection-end-column="79" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/VoteDetailDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="728">
-          <caret line="31" column="43" lean-forward="false" selection-start-line="31" selection-start-column="43" selection-end-line="31" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/dao/VotePlayerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="11" column="13" lean-forward="false" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/io/ride/service/impl/VotePlayerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3024">
-          <caret line="126" column="52" lean-forward="false" selection-start-line="126" selection-start-column="52" selection-end-line="126" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/pages/manager/check.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2492">
-          <caret line="89" column="38" lean-forward="false" selection-start-line="89" selection-start-column="38" selection-end-line="89" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/b3f94d2a/155c305f-d657-4e09-a292-f4561b74ab38/db_vote.t_vote_player">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>

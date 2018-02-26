@@ -8,7 +8,6 @@ import io.ride.service.impl.UserServiceImpl;
 import io.ride.util.*;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -96,8 +95,8 @@ public class UserServlet extends HttpServlet {
     /**
      * 登录
      *
-     * @param request
-     * @throws SQLException
+     * @param request request
+     * @throws SQLException 数据库操作异常
      */
     private void login(HttpServletRequest request) throws SQLException {
         String account = request.getParameter("account");
@@ -116,7 +115,7 @@ public class UserServlet extends HttpServlet {
             request.getSession().setAttribute("user", user);
             String ip = CusAccessObjectUtil.getIpAddress(request);
             System.out.println("====> ip is " + ip);
-            userService.addLoginInfo(user.getId(), ip);
+            boolean flag = userService.addLoginInfo(user.getId(), ip);
             out.print(JacksonUtil.toJSon(ResultDTO.SUCCESS("登录成功")));
         } else {
             out.print(JacksonUtil.toJSon(ResultDTO.FAIL("登录失败")));
@@ -127,8 +126,8 @@ public class UserServlet extends HttpServlet {
     /**
      * 注册
      *
-     * @param request
-     * @throws SQLException
+     * @param request request
+     * @throws SQLException 数据库操作异常
      */
     private void register(HttpServletRequest request) throws SQLException {
         String username = request.getParameter("username");
@@ -163,7 +162,7 @@ public class UserServlet extends HttpServlet {
             return;
         }
         Integer page = Integer.parseInt(request.getParameter("page"));
-        if (page == null) {
+        if (page < 1) {
             page = 1;
         }
         System.out.println("=====> page is " + page);
@@ -197,9 +196,9 @@ public class UserServlet extends HttpServlet {
     /**
      * 更新
      *
-     * @param request
-     * @throws SQLException
-     * @throws IOException
+     * @param request request
+     * @throws SQLException 数据库操作异常
+     * @throws IOException  IO异常
      */
     private void update(HttpServletRequest request) throws SQLException, IOException {
         User user = (User) request.getSession().getAttribute("user");

@@ -127,9 +127,6 @@
                         <input type="text" class="form-control" name="endTime" id="endTime"
                                placeholder="yyyy-mm-dd hh:MM:ss">
                     </div>
-                    <div class="col0xs-12">
-                        <small>请留出足够的时间添加选项</small>
-                    </div>
                 </div>
                 <div class="col-sm-offset-2 col-sm-10">
                     <a class="btn btn-success" id="voted-submit-btn">发起</a>
@@ -203,7 +200,7 @@
                     $('#go-to-theme').click(function () {
                         window.location.href = "${pageContext.request.contextPath}/vote/detail?op=detail&themeId=" + request.data.themeId;
                     });
-                } else if (request.code == 0) {
+                } else if (request.code === 0) {
                     $('#modal-body').empty().append(request.msg);
                     $('#message-modal').modal('show');
                 }

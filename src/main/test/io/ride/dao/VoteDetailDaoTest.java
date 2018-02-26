@@ -14,4 +14,13 @@ public class VoteDetailDaoTest {
         System.out.println(detailDao.getLeastDetailForIpAddress(8, "127.0.0.1"));
 
     }
+
+    @Test
+    public void countByWechatAndLogin() throws SQLException {
+        System.out.println("count: " + detailDao.countByThemeId(5));
+        System.out.println("ALL: " + detailDao.countByWechatAndLogin(5));
+        System.out.println("wechat: " + detailDao.countByOnlyWechat(5));
+        System.out.println("login: " + detailDao.countByOnlyLogin(5));
+        System.out.println("anonymous: " + detailDao.countByAnonymous(5));
+    }
 }
