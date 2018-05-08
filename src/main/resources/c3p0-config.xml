@@ -6,6 +6,6 @@
         <property name="jdbcUrl">jdbc:mysql://localhost:3306/db_vote?characterEncoding=UTF8</property>
 
         <property name="user">root</property>
-        <property name="password">ABCabc123#</property>
+        <property name="password"></property>
     </default-config>
 </c3p0-config>

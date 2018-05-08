@@ -2,11 +2,14 @@ package io.ride.wechat.util;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.ride.util.PropertiesUtils;
 import io.ride.wechat.PO.wechat.menu.Button;
 import io.ride.wechat.PO.wechat.menu.CommonButton;
 import io.ride.wechat.PO.wechat.menu.Menu;
 import io.ride.wechat.service.TokenService;
 import org.apache.commons.lang3.StringUtils;
+
+import java.io.IOException;
 
 public class MenuUtil {
 
@@ -30,13 +33,13 @@ public class MenuUtil {
         return result;
     }
 
-    private static Menu getMenu() {
+    private static Menu getMenu() throws IOException {
         CommonButton btn1 = new CommonButton();
         btn1.setName("参与投票");
         btn1.setType("view");
         // TODO 如果需要修改url这里
 
-        String myUrl = "http://ridddddde.free.ngrok.cc/redirect_index";
+        String myUrl = PropertiesUtils.readResource("properties/web-config.properties", "wechat.my_domain") + "/redirect_index";
         String url = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=" + CommonUtil.getAPPID()
                 + "&redirect_uri=" + myUrl
                 + "&response_type=code&scope=snsapi_base&state=STATE#wechat_redirec";

@@ -13,14 +13,13 @@ import io.ride.service.impl.VoteDetailServiceImpl;
 import io.ride.service.impl.VoteThemeServiceImpl;
 import io.ride.util.CusAccessObjectUtil;
 import io.ride.util.DateUtil;
+import io.ride.util.IpAddressUtils;
 import io.ride.util.JacksonUtil;
 import io.ride.wechat.PO.Follow;
-import io.ride.wechat.dao.FollowDao;
 import io.ride.wechat.service.FollowService;
 import io.ride.wechat.service.impl.FollowServiceImpl;
 import org.apache.commons.lang3.StringUtils;
 
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,8 +29,8 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 @WebServlet("/vote")
 public class VoteServlet extends HttpServlet {
@@ -101,6 +100,27 @@ public class VoteServlet extends HttpServlet {
             out.print(JacksonUtil.toJSon(ResultDTO.FAIL("错误, 没有选择投票主题")));
             out.flush();
             return;
+        }
+
+        // 限制投票区域
+        if (theme.getIsRestrictedZone() == 1) {
+            boolean flag;
+            String ipAddress = CusAccessObjectUtil.getIpAddress(request);
+//            String ipAddress = "60.12.210.99";
+            Map<String, String> position = IpAddressUtils.getAddress(ipAddress);
+//            if (StringUtils.equals(theme.getCountry(), "*") || StringUtils.equals(position.get("country"), theme.getCountry())) {
+            if (StringUtils.equals(position.get("region"), theme.getRegion())) {
+                flag = !StringUtils.equals(theme.getCity(), "*") && !StringUtils.equals(position.get("city"), theme.getCity());
+            } else {
+                flag = true;
+            }
+//            } else {
+//                flag = true;
+//            }
+            if (flag) {
+                out.print(JacksonUtil.toJSon(ResultDTO.FAIL("此投票限制区域")));
+                return;
+            }
         }
 
         String itemIdStr = request.getParameter("itemIds");
@@ -177,23 +197,29 @@ public class VoteServlet extends HttpServlet {
         int isSingle = Integer.parseInt(request.getParameter("isSingle"));
         int isAnonymous = Integer.parseInt(request.getParameter("isAnonymous"));
         int timeDiff = Integer.parseInt(request.getParameter("timeDiff"));
-//        int isRestrictedZone = Integer.parseInt(request.getParameter("isRestrictedZone"));
+        int isRestrictedZone = Integer.parseInt(request.getParameter("isRestrictedZone"));
 
         VoteTheme voteTheme = new VoteTheme(user.getId(), theme, desc, DateUtil.str2Date(startTime), DateUtil.str2Date(endTime),
                 isSingle, isAnonymous, timeDiff);
         voteTheme.setTimeDiff(timeDiff);
         voteTheme.setIpMax(ipMax == null ? -1 : ipMax);
+        voteTheme.setIsRestrictedZone(isRestrictedZone);
 
+        // 设置是否为单选
         if (isSingle != 0) {
             int maxSelect = Integer.parseInt(request.getParameter("maxSelect"));
             voteTheme.setMaxSelect(maxSelect);
         }
-//        if (isRestrictedZone != 0) {
-//            String ipZone = request.getParameter("ipZone");
-//            voteTheme.setIpZone(ipZone);
-//        }
 
-        System.out.println("=====> vote theme servlet start function ======>" + voteTheme);
+        // 限制Ip区域
+        if (isRestrictedZone == 1) {
+            String region = request.getParameter("region");
+            String city = request.getParameter("city");
+            voteTheme.setRegion(region);
+            voteTheme.setCity(city);
+        }
+
+        System.out.println("======>" + voteTheme + "\n\n");
 
         out.print(JacksonUtil.toJSon(themeService.addTheme(voteTheme)));
         out.flush();

@@ -109,13 +109,32 @@
                                placeholder="每个IP的投票数量限制,默认为-1不限制,如果为多选应乘选择的数量,建议设为预期值的两倍">
                     </div>
                 </div>
-                <%--<div class="form-group">--%>
-                <%--<div class="col-sm-3 col-sm-offset-2">--%>
-                <%--<label>--%>
-                <%--<input type="radio" name="isRestrictedZone" value="0" checked>不限制区域--%>
-                <%--</label>--%>
-                <%--</div>--%>
-                <%--</div>--%>
+                <div class="form-group">
+                    <div class="col-sm-2" ><b>区域限制</b></div>
+                    <div class="col-sm-3 ">
+                        <label>
+                            <input type="radio" name="isRestrictedZone" value="0" id="isRestrictedZone1" checked>不限制区域
+                        </label>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-2">
+                        <label>
+                            <input type="radio" name="isRestrictedZone" value="1" id="isRestrictedZone2">限制区域
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-2"><b>区域选择</b></div>
+                    <div class="col-sm-3 ">
+                        <select id="provice" name="region" disabled>
+                            <option value="-1">请选择省份</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <select id="selectCity" name="city" disabled>
+                            <option value="-1">请选择城市</option>
+                        </select>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="theme" class="col-sm-2 control-label">起止时间</label>
                     <div class="col-sm-4">
@@ -157,6 +176,7 @@
 </div>
 <script>
 
+
     laydate.render({
         elem: '#startTime',
         type: 'datetime',
@@ -170,18 +190,31 @@
     });
 
     $(function () {
+        initPro();
+
         $('#success-modal').modal(modal_params);
+
     });
+
 
     var success;
     $('#isSingle1').click(function () {
-        console.log("is single 1 radio click....");
         $('#maxSelect').attr("disabled", "disabled");
     });
 
     $('#isSingle2').click(function () {
-        console.log("is single 2 radio click....");
         $('#maxSelect').removeAttr('disabled');
+    });
+
+    $('#isRestrictedZone1').click(function () {
+        $('#provice').attr("disabled", "disabled");
+        $('#selectCity').attr("disabled", "disabled");
+
+    });
+
+    $('#isRestrictedZone2').click(function () {
+        $('#provice').removeAttr('disabled');
+        $('#selectCity').attr("disabled", "disabled");
     });
 
     $('#voted-submit-btn').click(function () {
@@ -207,6 +240,48 @@
             }
         });
     });
+
+    /* 初始化多选 */
+    function initPro() {
+        var option1 = '';
+        $.getJSON("../../json/city-code.json", function (jsonData) {
+
+            $.each(jsonData, function (index, indexItems) {
+                option1 += "<option id=" + indexItems.code + " value=" + indexItems.name + ">" + indexItems.name + "</option>";
+            });
+
+            $("#provice").append(option1);
+            $("#provice").bind("change", function () {
+                selectCity(jsonData);
+            });
+        });
+
+        /* 省份改变对应城市 */
+        function selectCity(data) {
+            var option2 = '';
+            var selectedIndex = $("#provice :selected").text();
+
+            $("#selectCity").empty();
+            console.log(selectedIndex);
+            if ($("#provice :selected").val() === -1) {
+                $("#selectCity").append("<option id=\"-1\">请选择城市</option>");
+            }
+
+            $.each(data, function (index, indexItems) {
+
+                var proName = indexItems.name;
+                if (proName === selectedIndex) {
+                    option2 += "<option value='*'>不限制</option>";
+                    $.each(indexItems.cities, function (index, indexItems) {
+                        option2 += "<option id=" + indexItems.code + " value=" + indexItems.name + ">" + indexItems.name + "</option>";
+
+                    });
+                }
+
+            });
+            $("#selectCity").append(option2);
+        }
+    }
 
 </script>
 </body>

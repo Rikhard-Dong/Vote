@@ -1,7 +1,10 @@
 package io.ride.PO;
 
+import lombok.Data;
+
 import java.util.Date;
 
+@Data
 public class VoteTheme {
     private int id;
     private int userId;
@@ -14,7 +17,9 @@ public class VoteTheme {
     private int maxSelect;
     private int isAnonymous;        // 0 允许匿名用户投票  1 不允许  2 使用微信投票
     private int isRestrictedZone;   // 是否限制投票区域  0 不限制  1 限制
-    private String ipZone;
+    private String region;          // 省份
+    private String city;            // 城市
+
     private int timeDiff;
     private int ipMax;
 
@@ -43,135 +48,5 @@ public class VoteTheme {
         this.isSingle = isSingle;
         this.isAnonymous = isAnonymous;
         this.isRestrictedZone = isRestrictedZone;
-    }
-
-    public int getIpMax() {
-        return ipMax;
-    }
-
-    public void setIpMax(int ipMax) {
-        this.ipMax = ipMax;
-    }
-
-    public int getTimeDiff() {
-        return timeDiff;
-    }
-
-    public void setTimeDiff(int timeDiff) {
-        this.timeDiff = timeDiff;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
-
-    public String getTheme() {
-        return theme;
-    }
-
-    public void setTheme(String theme) {
-        this.theme = theme;
-    }
-
-    public String getDesc() {
-        return desc;
-    }
-
-    public void setDesc(String desc) {
-        this.desc = desc;
-    }
-
-    public Date getCreateTime() {
-        return createTime;
-    }
-
-    public void setCreateTime(Date createTime) {
-        this.createTime = createTime;
-    }
-
-    public Date getStartTime() {
-        return startTime;
-    }
-
-    public void setStartTime(Date startTime) {
-        this.startTime = startTime;
-    }
-
-    public Date getEndTime() {
-        return endTime;
-    }
-
-    public void setEndTime(Date endTime) {
-        this.endTime = endTime;
-    }
-
-    public int getIsSingle() {
-        return isSingle;
-    }
-
-    public void setIsSingle(int isSingle) {
-        this.isSingle = isSingle;
-    }
-
-    public int getMaxSelect() {
-        return maxSelect;
-    }
-
-    public void setMaxSelect(int maxSelect) {
-        this.maxSelect = maxSelect;
-    }
-
-    public int getIsAnonymous() {
-        return isAnonymous;
-    }
-
-    public void setIsAnonymous(int isAnonymous) {
-        this.isAnonymous = isAnonymous;
-    }
-
-    public int getIsRestrictedZone() {
-        return isRestrictedZone;
-    }
-
-    public void setIsRestrictedZone(int isRestrictedZone) {
-        this.isRestrictedZone = isRestrictedZone;
-    }
-
-    public String getIpZone() {
-        return ipZone;
-    }
-
-    public void setIpZone(String ipZone) {
-        this.ipZone = ipZone;
-    }
-
-    @Override
-    public String toString() {
-        return "VoteTheme{" +
-                "id=" + id +
-                ", userId=" + userId +
-                ", theme='" + theme + '\'' +
-                ", desc='" + desc + '\'' +
-                ", createTime=" + createTime +
-                ", startTime=" + startTime +
-                ", endTime=" + endTime +
-                ", isSingle=" + isSingle +
-                ", maxSelect=" + maxSelect +
-                ", isAnonymous=" + isAnonymous +
-                ", isRestrictedZone=" + isRestrictedZone +
-                ", ipZone='" + ipZone + '\'' +
-                '}';
     }
 }

@@ -4,17 +4,27 @@ import io.ride.PO.User;
 import io.ride.PO.VoteTheme;
 import io.ride.dao.UserDao;
 import io.ride.dao.VoteThemeDao;
+import io.ride.util.PropertiesUtils;
 import io.ride.wechat.PO.wechat.response.Article;
 import io.ride.wechat.PO.wechat.response.RespMessageNews;
 import io.ride.wechat.service.ThemeService;
 
+import java.io.IOException;
 import java.util.Date;
 import java.sql.SQLException;
 
 public class ThemeServiceImpl implements ThemeService {
     private VoteThemeDao themeDao = new VoteThemeDao();
     private UserDao userDao = new UserDao();
-    private static final String DOMAIN = "http://ridddddde.free.ngrok.cc";
+    private static String DOMAIN;
+
+    static {
+        try {
+            DOMAIN = (String) PropertiesUtils.readResource("properties/wechat-config.properties", "wechat.my_domain");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @Override
     public RespMessageNews getTheme(int themeId, String openId) throws SQLException {

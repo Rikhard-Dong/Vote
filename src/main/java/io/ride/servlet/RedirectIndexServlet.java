@@ -26,12 +26,12 @@ public class RedirectIndexServlet extends HttpServlet {
                     "&code=" + code + "&grant_type=authorization_code";
 
             String resultJson = CommonUtil.Get(url);
-//            System.out.println("url is ======>" + url + " \nresult json =====> " + resultJson);
+            System.out.println("url is ======>" + url + " \nresult json =====> " + resultJson);
             ObjectMapper mapper = new ObjectMapper();
             JsonNode tree = mapper.readTree(resultJson);
             String openId = String.valueOf(tree.get("openid"));
             openId = openId.replace("\"", "");
-//            System.out.println("openId ===> " + openId);
+            System.out.println("openId ===> " + openId);
 
 
             request.getSession().setAttribute("openId", openId);

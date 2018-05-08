@@ -3,6 +3,7 @@ package io.ride.wechat.util;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.ride.util.PropertiesUtils;
 import io.ride.wechat.PO.wechat.AccessToken;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
@@ -22,9 +23,17 @@ public class CommonUtil {
     private static HttpClient CLIENT = new DefaultHttpClient();
     private static ObjectMapper MAPPER = new ObjectMapper();
 
-    private static String APPID = "wx639eb1ee0f3d7d09";
-    private static String SECRET = "af69af579ffe707b390524de97ffbea8";
+    private static String APPID;
+    private static String SECRET;
 
+    static {
+        try {
+            APPID = (String) PropertiesUtils.readResource("properties/wechat-config.properties", "wechat.appid");
+            SECRET = (String) PropertiesUtils.readResource("properties/wechat-config.properties", "wechat.secret");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     /**
      * 根据url获取返回对象

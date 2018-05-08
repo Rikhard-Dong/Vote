@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+<form name="fm" id="fm">
+    <select id="provice" name="region">
+        <option value="-1">请选择省份</option>
+    </select>
+    <select id="selectCity" name="city">
+        <option value="-1">请选择城市</option>
+    </select>
+    <a href="#" id="submit">提交</a>
+</form>
+
+<script>
+
+    $(function () {
+        initPro();
+
+        $('#submit').click(function () {
+            console.log("submit ===> " + $('#fm').serialize());
+        })
+    });
+</script>
+</body>
+
+</html>
