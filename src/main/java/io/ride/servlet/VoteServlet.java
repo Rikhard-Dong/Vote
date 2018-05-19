@@ -74,6 +74,7 @@ public class VoteServlet extends HttpServlet {
             throws IOException {
         out = response.getWriter();
 
+
         String op = request.getParameter("op");
         try {
             if (StringUtils.equals(op, "start")) {
@@ -94,6 +95,8 @@ public class VoteServlet extends HttpServlet {
      * @param request
      */
     private void voted(HttpServletRequest request) throws SQLException {
+        String ipAddress = CusAccessObjectUtil.getIpAddress(request);
+
         SimpleVoteThemeDto themeDto = (SimpleVoteThemeDto) request.getSession().getAttribute("theme");
         VoteTheme theme = themeDao.queryByThemeId(themeDto.getThemeId());
         if (theme == null) {
@@ -105,7 +108,7 @@ public class VoteServlet extends HttpServlet {
         // 限制投票区域
         if (theme.getIsRestrictedZone() == 1) {
             boolean flag;
-            String ipAddress = CusAccessObjectUtil.getIpAddress(request);
+
 //            String ipAddress = "60.12.210.99";
             Map<String, String> position = IpAddressUtils.getAddress(ipAddress);
 //            if (StringUtils.equals(theme.getCountry(), "*") || StringUtils.equals(position.get("country"), theme.getCountry())) {
@@ -123,9 +126,13 @@ public class VoteServlet extends HttpServlet {
             }
         }
 
+        if (theme.getIsIPRestriction() == 1 && !IpAddressUtils.isInRange(ipAddress, theme.getStartIp(), theme.getEndIp())) {
+            out.print(JacksonUtil.toJSon(ResultDTO.FAIL("此投票限制ip范围, 本次请求不在范围内")));
+            return;
+        }
+
         String itemIdStr = request.getParameter("itemIds");
         User user = (User) request.getSession().getAttribute("user");
-        String ipAddress = CusAccessObjectUtil.getIpAddress(request);
         String openId = (String) request.getSession().getAttribute("openId");
 
         System.out.println("vote servlet voted function openId ====> " + openId);
@@ -198,12 +205,18 @@ public class VoteServlet extends HttpServlet {
         int isAnonymous = Integer.parseInt(request.getParameter("isAnonymous"));
         int timeDiff = Integer.parseInt(request.getParameter("timeDiff"));
         int isRestrictedZone = Integer.parseInt(request.getParameter("isRestrictedZone"));
+        int isIPRestriction = Integer.parseInt(request.getParameter("isIPRestriction"));
+        String startIp = request.getParameter("startIp");
+        String endIp = request.getParameter("endIp");
 
         VoteTheme voteTheme = new VoteTheme(user.getId(), theme, desc, DateUtil.str2Date(startTime), DateUtil.str2Date(endTime),
                 isSingle, isAnonymous, timeDiff);
         voteTheme.setTimeDiff(timeDiff);
         voteTheme.setIpMax(ipMax == null ? -1 : ipMax);
         voteTheme.setIsRestrictedZone(isRestrictedZone);
+        voteTheme.setIsIPRestriction(isIPRestriction);
+        voteTheme.setStartIp(startIp);
+        voteTheme.setEndIp(endIp);
 
         // 设置是否为单选
         if (isSingle != 0) {

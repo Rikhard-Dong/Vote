@@ -18,16 +18,17 @@ public class VoteThemeDao extends BaseDao {
 
     public Long countByUserId(int userId) throws SQLException {
         String sql = "select count(*) from t_vote_theme where userId = ?";
-        return runner.query(sql, new ScalarHandler<Long>(), userId);
+        return runner.query(sql, new ScalarHandler<>(), userId);
     }
 
     public int insertOne(VoteTheme theme) throws SQLException {
-        String sql = "insert into t_vote_theme(userId, theme, `desc`, startTime, endTime, isSingle, maxSelect, isAnonymous, timeDiff, ipMax, isRestrictedZone, region, city) " +
-                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "insert into t_vote_theme(userId, theme, `desc`, startTime, endTime, isSingle, maxSelect, isAnonymous, timeDiff, ipMax, isRestrictedZone, region, city, isIPRestriction, startIp, endIp) " +
+                "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
         Object[] params = {theme.getUserId(), theme.getTheme(), theme.getDesc(), DateUtil.date2Str(theme.getStartTime()),
                 DateUtil.date2Str(theme.getEndTime()), theme.getIsSingle(), theme.getMaxSelect(),
-                theme.getIsAnonymous(), theme.getTimeDiff(), theme.getIpMax(), theme.getIsRestrictedZone(), theme.getRegion(), theme.getCity()};
+                theme.getIsAnonymous(), theme.getTimeDiff(), theme.getIpMax(), theme.getIsRestrictedZone(), theme.getRegion(),
+                theme.getCity(), theme.getIsIPRestriction(), theme.getStartIp(), theme.getEndIp()};
 
         return runner.update(sql, params);
     }

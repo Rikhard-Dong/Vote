@@ -110,7 +110,7 @@
                     </div>
                 </div>
                 <div class="form-group">
-                    <div class="col-sm-2" ><b>区域限制</b></div>
+                    <div class="col-sm-2"><b>区域限制</b></div>
                     <div class="col-sm-3 ">
                         <label>
                             <input type="radio" name="isRestrictedZone" value="0" id="isRestrictedZone1" checked>不限制区域
@@ -122,6 +122,7 @@
                         </label>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <div class="col-sm-2"><b>区域选择</b></div>
                     <div class="col-sm-3 ">
@@ -135,6 +136,30 @@
                         </select>
                     </div>
                 </div>
+
+                <div class="form-group">
+                    <div class="col-sm-2"><b>ip限制</b></div>
+                    <div class="col-sm-3 ">
+                        <label>
+                            <input type="radio" name="isIPRestriction" value="0" id="isIPRestriction1" checked>不限制IP
+                        </label>
+                    </div>
+                    <div class="col-sm-3 col-sm-offset-2">
+                        <label>
+                            <input type="radio" name="isIPRestriction" value="1" id="isIPRestriction2">限制
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="theme" class="col-sm-2 control-label">ip范围</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="startIp" id="startIp" placeholder="开始地址">
+                    </div>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" name="endIp" id="endIp" placeholder="结束地址">
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label for="theme" class="col-sm-2 control-label">起止时间</label>
                     <div class="col-sm-4">
@@ -214,7 +239,7 @@
 
     $('#isRestrictedZone2').click(function () {
         $('#provice').removeAttr('disabled');
-        $('#selectCity').attr("disabled", "disabled");
+        $('#selectCity').removeAttr("disabled");
     });
 
     $('#voted-submit-btn').click(function () {
@@ -273,6 +298,7 @@
                 if (proName === selectedIndex) {
                     option2 += "<option value='*'>不限制</option>";
                     $.each(indexItems.cities, function (index, indexItems) {
+                        console.log(indexItems.name)
                         option2 += "<option id=" + indexItems.code + " value=" + indexItems.name + ">" + indexItems.name + "</option>";
 
                     });

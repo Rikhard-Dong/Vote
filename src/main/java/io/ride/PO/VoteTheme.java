@@ -19,6 +19,9 @@ public class VoteTheme {
     private int isRestrictedZone;   // 是否限制投票区域  0 不限制  1 限制
     private String region;          // 省份
     private String city;            // 城市
+    private int isIPRestriction;    // 限制ip
+    private String startIp;         // 开始IP
+    private String endIp;           // 结束IP
 
     private int timeDiff;
     private int ipMax;

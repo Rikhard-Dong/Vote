@@ -30,6 +30,10 @@ public class CommonUtil {
         try {
             APPID = (String) PropertiesUtils.readResource("properties/wechat-config.properties", "wechat.appid");
             SECRET = (String) PropertiesUtils.readResource("properties/wechat-config.properties", "wechat.secret");
+
+
+            System.out.println("APPID ===> " +APPID);
+            System.out.println("SECRET ===> " + SECRET);
         } catch (IOException e) {
             e.printStackTrace();
         }

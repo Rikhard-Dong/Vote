@@ -178,9 +178,51 @@ public class IpAddressUtils {
         return outBuffer.toString();
     }
 
+    /**
+     * 判断是否在同一个网段之中
+     *
+     * @param ip
+     * @param cidr
+     * @return
+     */
+    public static boolean isInRange(String ip, String cidr) {
+        String[] ips = ip.split("\\.");
+        int ipAddr = (Integer.parseInt(ips[0]) << 24)
+                | (Integer.parseInt(ips[1]) << 16)
+                | (Integer.parseInt(ips[2]) << 8) | Integer.parseInt(ips[3]);
+        int type = Integer.parseInt(cidr.replaceAll(".*/", ""));
+        int mask = 0xFFFFFFFF << (32 - type);
+        String cidrIp = cidr.replaceAll("/.*", "");
+        String[] cidrIps = cidrIp.split("\\.");
+        int cidrIpAddr = (Integer.parseInt(cidrIps[0]) << 24)
+                | (Integer.parseInt(cidrIps[1]) << 16)
+                | (Integer.parseInt(cidrIps[2]) << 8)
+                | Integer.parseInt(cidrIps[3]);
+
+        return (ipAddr & mask) == (cidrIpAddr & mask);
+    }
+
+    public static boolean isInRange(String ip, String startIp, String endIp) {
+        String[] ips = ip.split("\\.");
+        int ipAddr = (Integer.parseInt(ips[0]) << 24)
+                | (Integer.parseInt(ips[1]) << 16)
+                | (Integer.parseInt(ips[2]) << 8) | Integer.parseInt(ips[3]);
+        String[] startIps = startIp.split("\\.");
+        int startIpAddr = (Integer.parseInt(startIps[0]) << 24)
+                | (Integer.parseInt(startIps[1]) << 16)
+                | (Integer.parseInt(startIps[2]) << 8) | Integer.parseInt(startIps[3]);
+        String[] endIps = endIp.split("\\.");
+        int endIpAddr = (Integer.parseInt(endIps[0]) << 24)
+                | (Integer.parseInt(endIps[1]) << 16)
+                | (Integer.parseInt(endIps[2]) << 8) | Integer.parseInt(endIps[3]);
+        return ipAddr >= startIpAddr && ipAddr <= endIpAddr;
+    }
+
     public static void main(String[] args) {
         System.out.println(getAddress("60.12.210.99"));
         System.out.println(getAddress("192.168.3.1"));
+
+        System.out.println(isInRange("192.168.1.10", "192.168.1.1", "192.168.1.100"));
 
     }
 } 
