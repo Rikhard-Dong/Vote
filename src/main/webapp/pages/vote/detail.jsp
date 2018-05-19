@@ -12,12 +12,12 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${sessionScope.theme.theme} -- 投票</title>
-    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
-    <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+    <script src="${pageContext.request.contextPath}/js/jquery-3.2.1.min.js"></script>
+    <script src="${pageContext.request.contextPath}/js/bootstrap.min.js"></script>
     <script src="${pageContext.request.contextPath}/js/template-web.js"></script>
     <script src="${pageContext.request.contextPath}/js/commons.js"></script>
+    <script src="${pageContext.request.contextPath}/js/jquery.cookie.min.js"></script>
     <%
         if (session.getAttribute("theme") == null) {
             response.sendRedirect("../index.jsp");

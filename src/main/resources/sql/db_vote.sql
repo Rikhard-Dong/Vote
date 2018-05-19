@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : wsl's mysql
-Source Server Version : 50722
-Source Host           : localhost:3306
+Source Server         : 阿里云
+Source Server Version : 50721
+Source Host           : 47.100.113.55:3306
 Source Database       : db_vote
 
 Target Server Type    : MYSQL
-Target Server Version : 50722
+Target Server Version : 50721
 File Encoding         : 65001
 
-Date: 2018-05-08 21:18:59
+Date: 2018-05-19 13:20:27
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -39,7 +39,7 @@ CREATE TABLE `t_user` (
 -- ----------------------------
 -- Records of t_user
 -- ----------------------------
-INSERT INTO `t_user` VALUES ('2', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1270458214@qq.com', 'ride', '\\upload\\head\\c079fff9ae9d437bb37403b1010c4964.jpg', null, '0', '0', '未知', '2018-05-08 15:19:30');
+INSERT INTO `t_user` VALUES ('2', 'admin', '21232f297a57a5a743894a0e4a801fc3', '1270458214@qq.com', 'ride', '/upload/head/0fdc25775815407296e6af8c0b6bf513.jpg', null, '0', '0', '未知', '2018-05-08 15:19:30');
 INSERT INTO `t_user` VALUES ('3', '唐秀娟', '877a6319be474cb6680459896727652d', '1943418084@qq.com', '唐秀娟', '\\upload\\head\\default-head.jpg', null, '1', '0', '未知', '2018-05-08 15:56:03');
 
 -- ----------------------------
@@ -54,7 +54,7 @@ CREATE TABLE `t_user_login_info` (
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`),
   CONSTRAINT `t_user_login_info_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `t_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_user_login_info
@@ -70,6 +70,16 @@ INSERT INTO `t_user_login_info` VALUES ('8', '2', '2018-05-08 20:42:31', '127.0.
 INSERT INTO `t_user_login_info` VALUES ('9', '2', '2018-05-08 20:44:43', '127.0.0.1');
 INSERT INTO `t_user_login_info` VALUES ('10', '2', '2018-05-08 21:05:34', '127.0.0.1');
 INSERT INTO `t_user_login_info` VALUES ('11', '2', '2018-05-08 21:09:41', '127.0.0.1');
+INSERT INTO `t_user_login_info` VALUES ('12', '2', '2018-05-12 15:42:07', '0:0:0:0:0:0:0:1');
+INSERT INTO `t_user_login_info` VALUES ('13', '2', '2018-05-12 15:42:55', '0:0:0:0:0:0:0:1');
+INSERT INTO `t_user_login_info` VALUES ('14', '2', '2018-05-16 19:53:42', '0:0:0:0:0:0:0:1');
+INSERT INTO `t_user_login_info` VALUES ('15', '2', '2018-05-16 20:06:33', '0:0:0:0:0:0:0:1');
+INSERT INTO `t_user_login_info` VALUES ('16', '2', '2018-05-19 12:30:00', '60.12.210.99');
+INSERT INTO `t_user_login_info` VALUES ('17', '2', '2018-05-19 12:59:05', '0:0:0:0:0:0:0:1');
+INSERT INTO `t_user_login_info` VALUES ('18', '2', '2018-05-19 13:03:37', '0:0:0:0:0:0:0:1');
+INSERT INTO `t_user_login_info` VALUES ('19', '2', '2018-05-19 13:05:39', '0:0:0:0:0:0:0:1');
+INSERT INTO `t_user_login_info` VALUES ('20', '2', '2018-05-19 13:11:39', '192.168.1.103');
+INSERT INTO `t_user_login_info` VALUES ('21', '2', '2018-05-19 13:13:15', '0:0:0:0:0:0:0:1');
 
 -- ----------------------------
 -- Table structure for `t_user_message`
@@ -106,12 +116,14 @@ CREATE TABLE `t_vote_detail` (
   KEY `userId` (`userId`),
   CONSTRAINT `t_vote_detail_ibfk_1` FOREIGN KEY (`itemId`) REFERENCES `t_vote_item` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   CONSTRAINT `t_vote_detail_ibfk_2` FOREIGN KEY (`userId`) REFERENCES `t_user` (`id`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_vote_detail
 -- ----------------------------
 INSERT INTO `t_vote_detail` VALUES ('2', '5', null, null, '127.0.0.1', '2018-05-08 21:17:50');
+INSERT INTO `t_vote_detail` VALUES ('3', '8', '2', null, '60.12.210.99', '2018-05-19 12:32:45');
+INSERT INTO `t_vote_detail` VALUES ('4', '12', '2', null, '192.168.1.103', '2018-05-19 13:12:24');
 
 -- ----------------------------
 -- Table structure for `t_vote_item`
@@ -128,13 +140,19 @@ CREATE TABLE `t_vote_item` (
   PRIMARY KEY (`id`),
   KEY `themeId` (`themeId`),
   CONSTRAINT `t_vote_item_ibfk_1` FOREIGN KEY (`themeId`) REFERENCES `t_vote_theme` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_vote_item
 -- ----------------------------
 INSERT INTO `t_vote_item` VALUES ('5', '7', '1', '1', '\\upload\\photo\\aefe744ad8fe4d05a8a5ff75eca77123.jpg', null, '2018-05-08 21:11:23');
 INSERT INTO `t_vote_item` VALUES ('6', '7', '2', '2', '\\upload\\photo\\24319d104fbd43868c9d69c80a234f31.jpg', null, '2018-05-08 21:11:32');
+INSERT INTO `t_vote_item` VALUES ('7', '8', '11', '11', '/upload/photo/26e0366ce7c44ec18d982e66fec08d04.jpg', null, '2018-05-19 12:30:58');
+INSERT INTO `t_vote_item` VALUES ('8', '8', '22', '22', '/upload/photo/b093ca5c657c4c409b8a370668cd4fcb.jpg', null, '2018-05-19 12:31:06');
+INSERT INTO `t_vote_item` VALUES ('9', '8', '33', '33', '/upload/photo/e6b056d8e7e346e7acf4e88282689276.jpg', null, '2018-05-19 12:31:20');
+INSERT INTO `t_vote_item` VALUES ('10', '9', '2', '2', '/upload/photo/bc72dd7a739a4ff786a1ca19d5d44465.jpg', null, '2018-05-19 12:33:48');
+INSERT INTO `t_vote_item` VALUES ('11', '9', '3', '3', '/upload/photo/782909844c824bbd818aaca5eed48e08.jpg', null, '2018-05-19 12:33:58');
+INSERT INTO `t_vote_item` VALUES ('12', '10', '11', '11', '\\upload\\photo\\92d3c692488749de818f795c8e67ef47.jpg', null, '2018-05-19 13:07:15');
 
 -- ----------------------------
 -- Table structure for `t_vote_player`
@@ -189,16 +207,22 @@ CREATE TABLE `t_vote_theme` (
   `region` varchar(10) DEFAULT NULL,
   `status` int(1) NOT NULL DEFAULT '0' COMMENT '投票状态 0. 未开始, 1. 进行中, 2. 已结束',
   `city` varchar(10) DEFAULT NULL,
+  `isIPRestriction` int(2) DEFAULT '0',
+  `endIp` varchar(64) DEFAULT NULL,
+  `startIp` varchar(64) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `userId` (`userId`),
   CONSTRAINT `t_vote_theme_ibfk_1` FOREIGN KEY (`userId`) REFERENCES `t_user` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of t_vote_theme
 -- ----------------------------
-INSERT INTO `t_vote_theme` VALUES ('6', '2', '1', '1', '2018-05-08 21:10:33', '2018-05-08 21:10:30', '2018-05-09 00:00:00', '0', '0', '2', '24', '1', '1', '青海', '0', '黄南');
-INSERT INTO `t_vote_theme` VALUES ('7', '2', '12', '12', '2018-05-08 21:11:14', '2018-05-08 21:15:00', '2018-05-10 00:00:00', '0', '0', '0', '24', '1', '12', '浙江', '0', '宁波');
+INSERT INTO `t_vote_theme` VALUES ('6', '2', '1', '1', '2018-05-08 21:10:33', '2018-05-08 21:10:30', '2018-05-09 00:00:00', '0', '0', '2', '24', '1', '1', '青海', '0', '黄南', '0', null, null);
+INSERT INTO `t_vote_theme` VALUES ('7', '2', '12', '12', '2018-05-08 21:11:14', '2018-05-08 21:15:00', '2018-05-10 00:00:00', '0', '0', '0', '24', '1', '12', '浙江', '0', '宁波', '0', null, null);
+INSERT INTO `t_vote_theme` VALUES ('8', '2', '1', '1', '2018-05-19 12:30:38', '2018-05-19 12:32:00', '2018-05-20 00:00:00', '0', '0', '0', '24', '1', '10', '浙江', '0', '宁波', '0', null, null);
+INSERT INTO `t_vote_theme` VALUES ('9', '2', '其他地区', '啊啊啊', '2018-05-19 12:33:39', '2018-05-19 12:34:32', '2018-05-21 00:00:00', '0', '0', '0', '24', '1', '12', '宁夏', '0', '石嘴山', '0', null, null);
+INSERT INTO `t_vote_theme` VALUES ('10', '2', '11', '111', '2018-05-19 13:07:02', '2018-05-19 13:07:00', '2018-05-21 00:00:00', '0', '0', '0', '24', '0', '11', null, '0', null, '1', '192.168.1.254', '192.168.1.1');
 
 -- ----------------------------
 -- Table structure for `t_wechat_follow`
